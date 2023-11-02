@@ -23,3 +23,5 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+![cover.png](../images/cover.webp)
+

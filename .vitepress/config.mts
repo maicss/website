@@ -14,13 +14,14 @@ export default defineConfig({
   //     function gtag(){dataLayer.push(arguments);}
   //     gtag('js', new Date());
   //     gtag('config', 'TAG_ID');`],
-    
+
   ],
+  srcExclude: ['../README.md'],
   srcDir: './pages',
+  lang: 'zh-CN',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: "Miacss' website",
-    lang: 'zh-CN',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/blog/' },
