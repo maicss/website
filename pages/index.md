@@ -23,5 +23,9 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+<img src="../images/cover.webp" width="100" height="100">
+
 ![cover.png](../images/cover.webp)
+
+![logo](../public/logo.png)
 

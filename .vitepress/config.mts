@@ -4,9 +4,10 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Maicss",
   description: "Miacss' website",
-  base: '/',
+  // base: '/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
   //   [ 'link', { href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' } ],
   //   ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=TAG_ID' }],
   //   ['script', {},
