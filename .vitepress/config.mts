@@ -8,13 +8,14 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
-  //   [ 'link', { href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' } ],
-  //   ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=TAG_ID' }],
-  //   ['script', {},
-  //     `window.dataLayer = window.dataLayer || [];
-  //     function gtag(){dataLayer.push(arguments);}
-  //     gtag('js', new Date());
-  //     gtag('config', 'TAG_ID');`],
+    // [ 'link', { href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' } ],
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-7KBNJR8LJ3' }],
+    ['script', {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7KBNJR8LJ3');`
+    ],
 
   ],
   srcExclude: ['../README.md'],

@@ -29,5 +29,3 @@ features:
     link: https://github.com/maicss/chrome-shanbay-v2
     details: Chrome 扇贝查词插件，提供双击/选中查词，发音，例句，加入生词本，学习提醒等功能。
 ---
-
-<style module>.VPHome img {border: 4px}</style>
