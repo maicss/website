@@ -20,24 +20,30 @@ export default defineConfig({
   srcExclude: ['../README.md'],
   srcDir: './pages',
   lang: 'zh-CN',
+  // cleanUrls: false,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    editLink: {
+      pattern: 'https://github.com/maicss/weisite/edit/main/docs/:path',
+      text: '在GitHub上编辑此页面'
+    },
     siteTitle: "Miacss' website",
     nav: [
-      { text: 'Home', link: '/' },
+      { text: '首页', link: '/' },
+      { text: 'PyQT 教程', link: '/pyqt/' },
       { text: 'Blog', link: '/blog/' },
     ],
     logo: {src: '/logo.png', alt: 'maicss\' website logo'},
     i18nRouting: false,
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    // sidebar: [
+    //   {
+    //     text: 'Examples',
+    //     items: [
+    //       { text: 'Markdown Examples', link: '/markdown-examples' },
+    //       { text: 'Runtime API Examples', link: '/api-examples' }
+    //     ]
+    //   }
+    // ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/maicss' }
     ],
@@ -45,9 +51,9 @@ export default defineConfig({
       // message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Maicss'
     },
-    search: {
-      provider: 'local'
-    },
+    // search: {
+    //   provider: 'local'
+    // },
 
     // carbonAds: {
     //   code: 'your-carbon-code',
