@@ -22,12 +22,11 @@ next:
 `QDrag` 提供对基于 `MIME` 的拖放数据传输的支持。它处理拖放操作的大部分细节。传输的数据包含在 `QMimeData` 对象中
 
 ## Simple drag and drop example in PyQt6
-In the first example, we have a `QLineEdit` and a `QPushButton`. We drag plain text from the line edit widget and drop it onto the button widget. The button's label will change.
 示例中，有一个 `QLineEdit` 和 `QPushButton` 部件，我们将纯文本从行编辑小部件拖放到按钮小部件上，以改变按钮的标签。
 
 ``` python
-# file: simple.py
 #!/usr/bin/python
+# file: simple.py
 
 """
 ZetCode PyQt6 tutorial
@@ -146,8 +145,8 @@ edit.setDragEnabled(True)
 接下来的示例演示了如何拖放按钮组件。
 
 ``` python
-# file: drag_button.py
 #!/usr/bin/python
+# file: drag_button.py
 
 """
 ZetCode PyQt6 tutorial

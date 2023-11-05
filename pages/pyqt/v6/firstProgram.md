@@ -13,8 +13,8 @@ next:
 这是一个显示小窗口的简单示例。但我们可以用这个窗口做很多事情。我们可以调整它的大小、最大化或最小化它。 实现这些功能通常需要写大量的代码，但这些功能很常见，所以这部分功能已经封装好了，我们直接使用即可。PyQt6 是一个高级工具包，如果使用低级的工具包，下面的代码示例很可能需要数百行才可以实现。
 
 ``` python
-# file: simple.py
 #!/usr/bin/python
+# file: simple.py
 
 """
 ZetCode PyQt6 tutorial
@@ -94,8 +94,8 @@ sys.exit(app.exec())
 我们可以为程序创建一个气泡提示。
 
 ``` python
-# file: tooltip.py
 #!/usr/bin/python
+# file: tooltip.py
 
 """
 ZetCode PyQt6 tutorial
@@ -175,7 +175,9 @@ btn.move(50, 50)
 `sizeHint` 方法是给按钮一个系统建议的尺寸，然后使用 `move` 方法移动这个按钮的位置。
 
 ![Tooltips](./images/tooltips.png)
-Figure: Tooltips
+
+图示：Tooltips
+
 ## PyQt6 退出按钮
 关闭窗口的明显方法是单击标题栏上的 x 标记。在下一个示例中，我们将展示如何以编程方式关闭窗口。 我们将简要介绍信号和插槽。
 
@@ -186,8 +188,8 @@ QPushButton(string text, QWidget parent = None)
 参数 `text` 是将显示在按钮上的文本。`parent` 是我们放置按钮的小部件。在我们的例子中，它将是一个`QWidget`。应用程序的小部件形成层次结构，在这个层次结构中，大多数小部件都有父级。没有父级的小部件的父级是顶级窗口。
 
 ```python
-# file: quit_button.py
 #!/usr/bin/python
+# file: quit_button.py
 
 """
 ZetCode PyQt6 tutorial
@@ -253,8 +255,8 @@ PyQt6 的事件处理系统是由信号和插槽机制构成的，点击按钮�
 默认情况下，如果我们点击标题栏上的 x 按钮，`QWidget` 会被关闭。有时我们想修改这个默认行为。 例如，如果在编辑器中打开了一个文件，修改了部分内容，我们需要显示一个消息框来确认退出程序的操作。
 
 ``` python
-# file: messagebox.py
 #!/usr/bin/python
+# file: messagebox.py
 
 """
 ZetCode PyQt6 tutorial
@@ -331,8 +333,8 @@ else:
 ## PyQt6 窗口居中
 下面的脚本会在屏幕上显示一个居中的窗口。
 ``` python
-# file: center.py
 #!/usr/bin/python
+# file: center.py
 
 """
 ZetCode PyQt6 tutorial

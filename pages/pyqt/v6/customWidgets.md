@@ -16,8 +16,8 @@ PyQt6 已经有丰富的组件，但是没有任何工具包能提供开发者�
 这个组件可以在 Nero、K3B 或其他的 CD/DVD 烧录软件里看到。
 
 ``` python
-# file: burning_widget.py
 #!/usr/bin/python
+# file: burning_widget.py
 
 """
 ZetCode PyQt6 tutorial

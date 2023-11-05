@@ -36,8 +36,8 @@ PyQt6 目标是创建应用程序，有些其他的库的目标是创造电脑�
 代码包含四个类：`Tetris`，`Board`，`Tetrominoe` 和 `Shape`。`Tetris` 类设置了游戏。`Board` 是编写游戏逻辑的地方。`Tetrominoe` 类包含所有俄罗斯方块的名称，`Shape` 类包含俄罗斯方块的代码。
 
 ``` python
-# files: tetris.py
 #!/usr/bin/python
+# files: tetris.py
 
 """
 ZetCode PyQt6 tutorial

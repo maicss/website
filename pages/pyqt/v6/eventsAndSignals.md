@@ -28,8 +28,8 @@ PyQt6 有独特的信号和插槽机制来处理事件，用于对象之间的�
 下面的示例展示了 PyQt6 的信号和插槽。
 
 ``` python
-# file: signals_slots.py
 #!/usr/bin/python
+# file: signals_slots.py
 
 """
 ZetCode PyQt6 tutorial
@@ -99,8 +99,8 @@ PyQt6里，事件的处理器一般都会重新实现。
 > 译注：所有的事件处理器都有默认的实现，也就是默认事件。默认事件可能有自己的逻辑，比如拖选，点击，有的可能只是一个空函数。空函数都需要重新覆盖原来的实现，达到事件处理的目的。有默认事件处理函数的，也有可能被覆盖实现，比如禁用自带的拖选，或者重写拖选的效果等。
 
 ``` python
-# file: reimplement_handler.py
 #!/usr/bin/python
+# file: reimplement_handler.py
 
 """
 ZetCode PyQt6 tutorial
@@ -160,8 +160,8 @@ def keyPressEvent(self, e):
 事件对象是一个 Python object，包含了一系列描述这个事件的属性，具体内容要看触发的事件。
 
 ``` python
-# file: event_object.py
 #!/usr/bin/python
+# file: event_object.py
 
 """
 ZetCode PyQt6 tutorial
@@ -252,8 +252,8 @@ self.label = QLabel(self.text, self)
 某些时候，需要知道事件的触发者是谁，PyQt6 有获取事件触发者的方法。
 
 ``` python
-event_sender.py
 #!/usr/bin/python
+# event_sender.py
 
 """
 ZetCode PyQt6 tutorial
@@ -338,8 +338,8 @@ def buttonClicked(self):
 `QObject` 可以主动触发信号。下面的示例显示了如果触发自定义信号。
 
 ``` python
-# file: custom_signal.py
 #!/usr/bin/python
+# file: custom_signal.py
 
 """
 ZetCode PyQt6 tutorial

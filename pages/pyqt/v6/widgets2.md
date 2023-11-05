@@ -14,8 +14,8 @@ next:
 `QPixmap` 是用于处理图像的小组件，为显示图像进行了优化。下面是使用 `QPixmap` 渲染图像的示例。
 
 ``` python
-# file: pixmap.py
 #!/usr/bin/python
+# file: pixmap.py
 
 """
 ZetCode PyQt6 tutorial
@@ -82,8 +82,8 @@ lbl.setPixmap(pixmap)
 QLineEdit是一个可以输入单行文本的组件，它有撤消和重做、剪切和粘贴以及拖放功能。
 
 ``` python
-# file: line_edit.py
 #!/usr/bin/python
+# file: line_edit.py
 
 """
 ZetCode PyQt6 tutorial
@@ -164,8 +164,8 @@ def onChanged(self, text):
 ## PyQt6 QSplitter
 `QSplitter` 允许用户通过拖动子部件之间的边界来控制子部件的大小。下面是被两个分割条分开的三个`QFrame` 组件的示例。
 ``` python
-# file: splitter.py
 #!/usr/bin/python
+# file: splitter.py
 
 """
 ZetCode PyQt6 tutorial
@@ -257,8 +257,8 @@ splitter2.addWidget(splitter1)
 `QComboBox` 是下拉选框组件，能让用户在一系列选项中进行选择。
 
 ``` python
-# file: combobox.py
 #!/usr/bin/python
+# file: combobox.py
 
 """
 ZetCode PyQt6 tutorial

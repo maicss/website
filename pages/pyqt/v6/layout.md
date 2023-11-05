@@ -21,8 +21,8 @@ next:
 下面的示例以绝对坐标来定位小部件。
 
 ``` python
-# file: absolute.py
 #!/usr/bin/python
+# file: absolute.py
 
 """
 ZetCode PyQt6 tutorial
@@ -90,8 +90,8 @@ The label widget is positioned at x=15 and y=10.
 假设我们想在右下角放置两个按钮。为了创建这样的布局，我们使用一个水平框和一个垂直框。为了创造必要的空间，我们添加了一个“拉伸因子”。
 
 ``` python
-# file: box_layout.py
 #!/usr/bin/python
+# file: box_layout.py
 
 """
 ZetCode PyQt6 tutorial
@@ -181,8 +181,8 @@ self.setLayout(vbox)
 
 `QGridLayout` 是最常用的布局类，它能把空间分为多行多列。
 ``` python
-# file: calculator.py
 #!/usr/bin/python
+# file: calculator.py
 
 """
 ZetCode PyQt6 tutorial
@@ -280,8 +280,8 @@ for position, name in zip(positions, names):
 组件可以跨越多个行和列，下面的示例来演示这个。
 
 ``` python
-# file: review.py
 #!/usr/bin/python
+# file: review.py
 
 """
 ZetCode PyQt6 tutorial

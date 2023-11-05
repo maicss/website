@@ -18,8 +18,8 @@ PyQt6 有 `QDate`, `QDateTime`, `QTime` 类处理日期和时间。`QDate` 是�
 PyQt6 有 `currentDate`、`currentTime` 和 `currentDateTime` 方法获取当前的日期或时间。
 
 ``` python 
-# file: current_date_time.py
 #!/usr/bin/python
+# file: current_date_time.py
 
 from PyQt6.QtCore import QDate, QTime, QDateTime, Qt
 
@@ -286,7 +286,7 @@ $ ./unix_time.py
 ## PyQt6 儒略日
 儒略日是指自儒略时期开始以来的连续天数。 它主要由天文学家使用。 它不应与儒略历混淆。 它开始于公元前 4713 年。第 0 天是公元前 4713 年 1 月 1 日中午的那天。
 
-儒略日数 (JDN) 是自此期间开始以来经过的天数。 任何时刻的儒略日期 (JD) 是前一个中午的儒略日数加上自该时刻起当天的分数。 （Qt 不计算这个分数。）除了天文学，儒略日期经常被军事和大型机程序使用。
+儒略日数 (JDN) 是自此期间开始以来经过的天数。 任何时刻的儒略日期 (JD) 是前一个中午的儒略日数加上自该时刻起当天的分数。（Qt 不计算这个分数。）除了天文学，儒略日期经常被军事和大型机程序使用。
 
 ``` python
 # file: julian_day.py

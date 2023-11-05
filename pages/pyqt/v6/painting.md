@@ -19,8 +19,8 @@ QPainter 在小部件和其他可绘制单元上执行底层绘制。从简单�
 从绘制一些 Unicode 文本开始。
 
 ``` python
-# file: draw_text.py
 #!/usr/bin/python
+# file: draw_text.py
 
 """
 ZetCode PyQt6 tutorial
@@ -113,8 +113,8 @@ drawText 方法在窗口上绘制文本。paintEvent 的rect方法返回需要�
 点是绘制里最简单的图形对象。
 
 ``` python
-# file: draw_points.py
 #!/usr/bin/python
+# file: draw_points.py
 
 """
 ZetCode PyQt6 tutorial
@@ -203,8 +203,8 @@ qp.drawPoint(x, y)
 颜色是表示红色、绿色和蓝色 (RGB) 强度值组合的对象。有效的 RGB 值的范围是0到255。可以用不同的方法定义一种颜色。最常见的是RGB十进制值或十六进制值。还可以使用 RGBA 值，它代表红色、绿色、蓝色和 Alpha 通道，添加了透明度信息。Alpha 值为255定义完全不透明，0表示完全透明，也就是颜色不可见。
 
 ``` python
-# file: colours.py
 #!/usr/bin/python
+# file: colours.py
 
 """
 ZetCode PyQt6 tutorial
@@ -292,8 +292,8 @@ qp.drawRect(10, 15, 90, 60)
 `QPen` 是一个基本图形对象，可以绘制线条，曲线和矩形，椭圆，多边形等形状的轮廓。
 
 ``` python
-# file: pens.py
 #!/usr/bin/python
+# file: pens.py
 
 """
 ZetCode PyQt6 tutorial
@@ -396,8 +396,8 @@ qp.setPen(pen)
 `QBrush` 是一个基本图形对象。它用于绘制矩形、椭圆等形状的背景。笔刷有三种类型：预定义的笔刷、渐变或纹理模式。
 
 ``` python
-# file: brushes.py
 #!/usr/bin/python
+# file: brushes.py
 
 """
 ZetCode PyQt6 tutorial
@@ -504,8 +504,8 @@ qp.drawRect(10, 15, 90, 60)
 贝塞尔曲线是三次方曲线。PyQt6 中的贝塞尔曲线可以用 `QPainterPath` 创建。画线路径是由许多图形构建块(如矩形、椭圆、直线和曲线)组成的对象。
 
 ``` python
-# file: bezier_curve.py
 #!/usr/bin/python
+# file: bezier_curve.py
 
 """
 ZetCode PyQt6 tutorial

@@ -14,8 +14,8 @@ next:
 `QInputDialog` 提供了一个简单方便的对话框来从用户那里获取输入。输入值可以是字符串、数字或列表中的项目。
 
 ``` python
-# file: input_dialog.py
 #!/usr/bin/python
+# file: input_dialog.py
 
 """
 ZetCode PyQt6 tutorial
@@ -95,8 +95,8 @@ if ok:
 `QColorDialog` 是可以选择颜色对话框。
 
 ``` python
-# file: color_dialog.py
 #!/usr/bin/python
+# file: color_dialog.py
 
 """
 ZetCode PyQt6 tutorial
@@ -183,8 +183,8 @@ if col.isValid():
 `QFontDialog` 是选择字体的对话框。
 
 ``` python
-# file: font_dialog.py
 #!/usr/bin/python
+# file: font_dialog.py
 
 """
 ZetCode PyQt6 tutorial
@@ -266,8 +266,8 @@ if ok:
 `QFileDialog` 是选择文件或者文件夹的对话框，可以用作选择或者保存操作。
 
 ``` python
-# file: file_dialog.py
 #!/usr/bin/python
+# file: file_dialog.py
 
 """
 ZetCode PyQt6 tutorial

@@ -15,8 +15,8 @@ next:
 `QCheckBox` 组件有两个状态：选中和非选中。由个选框和文字组成，主要用于表示某个属性时开启还是关闭。
 
 ``` python
-# file: check_box.py
 #!/usr/bin/python
+# file: check_box.py
 
 """
 ZetCode PyQt6 tutorial
@@ -101,8 +101,8 @@ else:
 切换按钮是 `QPushButton` 的一个特殊情况。它又两个状态：按下与否，鼠标点击触发。
 
 ``` python
-# file: toggle_button.py
 #!/usr/bin/python
+# file: toggle_button.py
 
 """
 ZetCode PyQt6 tutorial
@@ -231,8 +231,8 @@ QSlider是一个有简单手柄的小部件，这个手柄可以前后拖动。�
 在我们的示例中，我们显示了一个滑块和一个标签。标签显示一个图像。滑块控制标签。
 
 ``` python
-# file: slider.py
 #!/usr/bin/python
+# file: slider.py
 
 """
 ZetCode PyQt6 tutorial
@@ -332,8 +332,8 @@ if value == 0:
 进度条是一个用于处理冗长任务的小部件。它是动态的，以便用户知道任务正在进行中。`QProgressBar` 小部件在 PyQt6 工具包中提供了一个水平或垂直的进度条。可以设置进度条的最小值和最大值，默认值为0和99。
 
 ``` python
-# file: progressbar.py
 #!/usr/bin/python
+# file: progressbar.py
 
 """
 ZetCode PyQt6 tutorial
@@ -454,8 +454,8 @@ def doAction(self):
 `QCalendarWidget` 提供了一个月视图的日历组件，它能让用户简单直观的选择日期。
 
 ``` python
-# file: calendar.py
 #!/usr/bin/python
+# file: calendar.py
 
 """
 ZetCode PyQt6 tutorial

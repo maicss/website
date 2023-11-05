@@ -16,8 +16,8 @@ next:
 状态栏是显示状态信息的小部件。
 
 ``` python
-# file: statusbar.py
 #!/usr/bin/python
+# file: statusbar.py
 
 """
 ZetCode PyQt6 tutorial
@@ -68,8 +68,8 @@ self.statusBar().showMessage('Ready')
 ## PyQt6 简单菜单
 菜单栏在GUI应用程序中很常见，它是位于各种菜单中的一组命令。(Mac OS 对菜单栏的处理是不同的，要得到类似的结果，我们可以添加下面这行: `menubar.setNativeMenuBar(False)`
 ``` python
-# file: simple_menu.py
 #!/usr/bin/python
+# file: simple_menu.py
 
 """
 ZetCode PyQt6 tutorial
@@ -143,8 +143,8 @@ fileMenu.addAction(exitAct)
 ## PyQt6 子菜单
 子菜单是位于菜单里的菜单。
 ``` python
+# !/usr/bin/python
 # file: submenu.py
-#!/usr/bin/python
 
 """
 ZetCode PyQt6 tutorial
@@ -220,8 +220,8 @@ impMenu.addAction(impAct)
 下面的示例中，创建了一个可以勾选的菜单。
 
 ``` python
-# file: check_menu.py
 #!/usr/bin/python
+# file: check_menu.py
 
 """
 ZetCode PyQt6 tutorial
@@ -312,8 +312,8 @@ def toggleMenu(self, state):
 上下文菜单，也称为弹出菜单，是在某些上下文下出现的命令列表。例如，在 Opera 浏览器中，在网页上按下鼠标右键，我们会得到一个上下文菜单，这个菜单上，可以重新加载页面、返回或查看页面源代码。如果右击工具栏，会得到另一个用于管理工具栏的上下文菜单。
 
 ``` python
-# file: context_menu.py
 #!/usr/bin/python
+# file: context_menu.py
 
 """
 ZetCode PyQt6 tutorial
@@ -382,8 +382,8 @@ if action == quitAct:
 菜单包含了一个应用程序里所有需要使用到的命令，工具栏则是放置常用命令的地方。
 
 ``` python 
-# file: toolbar.py
 #!/usr/bin/python
+# file: toolbar.py
 
 """
 ZetCode PyQt6 tutorial
@@ -455,8 +455,8 @@ self.toolbar.addAction(exitAction)
 这是本章最后一个示例，这里创建一个菜单栏，一个工具栏和一个状态栏，并增加一个中心布局组件。
 
 ``` python
-# file: main_window.py
 #!/usr/bin/python
+# file: main_window.py
 
 """
 ZetCode PyQt6 tutorial

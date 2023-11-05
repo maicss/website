@@ -48,8 +48,8 @@ Python 是一种通用的、动态的、面向对象的编程语言。Python语�
 `QT_VERSION_STR` 可以显示 Qt 的版本信息，`PYQT_VERSION_STR` 可以显示 PyQt 的版本信息
 
 ``` python
-# file: version.py
 #!/usr/bin/python
+# file: version.py
 
 from PyQt6.QtCore import QT_VERSION_STR
 from PyQt6.QtCore import PYQT_VERSION_STR
