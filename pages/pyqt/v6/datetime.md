@@ -365,3 +365,20 @@ Days since Borodino battle: 76199
 当我们运行这个脚本时，距离斯拉夫科夫战役已经过去了 78670 天，距离博罗季诺战役已经过去了 76199 天。
 
 在 PyQt6 教程的这一部分中，我们使用了日期和时间。
+
+<script src="https://giscus.app/client.js"
+        data-repo="maicss/website"
+        data-repo-id="R_kgDOKnduBQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKnduBc4Cas0c"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

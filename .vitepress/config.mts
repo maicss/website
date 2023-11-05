@@ -16,6 +16,15 @@ export default defineConfig({
       gtag('js', new Date());
       gtag('config', 'G-7KBNJR8LJ3');`
     ],
+    [ 'script', {}, 
+    `var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cf025a6c77712bb71c5407558d3bd6b7";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();`
+    ],
 
   ],
   srcExclude: ['../README.md'],
@@ -23,7 +32,14 @@ export default defineConfig({
   lang: 'zh-CN',
   // cleanUrls: false,
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    // https://vitepress.dev/reference/default-theme-config、
+    outline: {
+      label: 'TOC'
+    },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
     editLink: {
       pattern: 'https://github.com/maicss/weisite/edit/main/docs/:path',
       text: '在GitHub上编辑此页面'
@@ -60,9 +76,11 @@ export default defineConfig({
     //   code: 'your-carbon-code',
     //   placement: 'your-carbon-placement'
     // },
+    lastUpdated: {
+      text: '更新时间: '
+    },
   },
   sitemap: {
     hostname: 'https://maicss.com'
   },
-  lastUpdated: true,
 })
