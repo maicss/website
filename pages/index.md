@@ -19,12 +19,12 @@ hero:
 
 features:
   - icon:
-      src: images/pyqt.svg
+      src: pyqt.svg
     title: PyQt 教程
     link: /pyqt/
     details: PyQt 中文教程，涵盖了 PyQt5 和 PyQt6。
   - icon: 
-      src: images/shanbay.webp
+      src: shanbay.webp
     title: Chrome-Shanbay 浏览器插件
     link: https://github.com/maicss/chrome-shanbay-v2
     details: Chrome 扇贝查词插件，提供双击/选中查词，发音，例句，加入生词本，学习提醒等功能。
