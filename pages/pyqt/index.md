@@ -13,22 +13,6 @@
         <span>PyQt6 教程</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" data-rnwibasecard--161t3wu-hover="true" data-rnwi-handle="nearest" class="r-1rasi3h" style="width: 24px; height: 24px;"><path fill="currentColor" fill-rule="evenodd" d="M9.076 3.576a.6.6 0 0 1 .848 0l4 4a.6.6 0 0 1 0 .848l-4 4a.6.6 0 0 1-.848-.848L12.052 8.6H2.5a.6.6 0 0 1 0-1.2h9.552L9.076 4.424a.6.6 0 0 1 0-.848Z" clip-rule="evenodd"></path></svg>
     </a>
-<script src="https://giscus.app/client.js"
-        data-repo="maicss/website"
-        data-repo-id="R_kgDOKnduBQ"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOKnduBc4Cas0c"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
 </div>
 
 <script setup>

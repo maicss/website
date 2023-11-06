@@ -36,6 +36,7 @@ export default defineConfig({
     outline: {
       label: 'TOC'
     },
+    returnToTopLabel: 'returnToTopLabel',
     docFooter: {
       prev: '上一篇',
       next: '下一篇'

@@ -1,11 +1,27 @@
 <!-- .vitepress/theme/Layout.vue -->
 
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData, useRoute, useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { nextTick, provide } from 'vue'
+import { nextTick, onMounted, ref, watch, provide } from 'vue';
+const { Layout } = DefaultTheme
+const { frontmatter, isDark } = useData()
 
-const { isDark } = useData()
+const route = useRoute()
+const router = useRouter()
+
+const NoCommentPages = ['/', '/pyqt/', '/blog/']
+const mountComment = ref(false)
+
+// const 
+onMounted(() => {
+  import('giscus');
+  handleCommentComponent()
+});
+
+const handleCommentComponent = () => {
+  mountComment.value = !NoCommentPages.includes(route.path) || frontmatter.value?.comment
+}
 
 const enableTransitions = () =>
   'startViewTransition' in document &&
@@ -39,10 +55,65 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     }
   )
 })
+
+
+router.onAfterRouteChanged = () => {
+
+}
+// onAfterRouteChanged((to) => {
+//   console.log(1111, to)
+// })
+
+
+// onBeforeRouteChange((to) => {
+//   console.log(2222, to)
+//   return true
+// })
+
+watch(() => route.path, () => {
+  nextTick().then(() => {
+    handleCommentComponent()
+  })
+})
+
+watch([isDark], () => {
+  // console.log(1111, isDark, document.querySelector('#giscus'), document.querySelector('#giscus').getAttribute('theme'))
+  document.querySelector('#giscus').setAttribute('theme', isDark.value ? 'dark' : 'light')
+  nextTick().then(() => {
+  })
+})
+
+// todo 1, 上面俩监听是不是可以去掉一个
+// todo 2, 为啥官方的vue包装不用 v-pre
+// todo 3, 为啥官方的vue包装可以直接使用v-if
+// todo 4, 换肤，不使用重新渲染的方式试试看
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <Layout>
+    <template #doc-bottom>
+      <div v-if="mountComment">
+        <giscus-widget
+          v-pre
+          id="giscus"
+          repo="maicss/website"
+          repoid="R_kgDOKnduBQ"
+          category="Announcements"
+          categoryid="DIC_kwDOKnduBc4Cas0c"
+          mapping="pathname"
+          term="Welcome to Maicss' site"
+          strict="0"
+          :reactionsenabled="true"
+          emitmetadata="0"
+          inputposition="top"
+          theme="light"
+          lang="zh-CN"
+        >
+        <p>Loading comments...</p>
+      </giscus-widget>
+      </div>
+    </template>
+  </Layout>
 </template>
 
 <style>

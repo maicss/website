@@ -5,6 +5,7 @@ prev:
 next:
   text: '日期和时间'
   link: '/pyqt/v6/datetime'
+comment: true
 ---
 # 简介
 
