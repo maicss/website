@@ -1,12 +1,13 @@
 {
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build": "zhlint --dir pages && vitepress build",
     "preview": "vitepress preview",
     "bp": "vitepress build && vitepress preview"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-rc.24"
+    "vitepress": "1.0.0-rc.25",
+    "zhlint": "^0.7.1"
   },
   "pnpm": {
     "peerDependencyRules": {
