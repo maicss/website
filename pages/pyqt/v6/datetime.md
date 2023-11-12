@@ -1,17 +1,8 @@
----
-prev:
-  text: 'PyQt6 简介'
-  link: '/pyqt/v6/'
-next:
-  text: '第一个程序'
-  link: '/pyqt/v6/firstProgram'
----
-
 # PyQt6 日期和时间
 
-## QDate, QTime, QDateTime
+## QDate，QTime，QDateTime
 
-PyQt6 有 `QDate`, `QDateTime`, `QTime` 类处理日期和时间。`QDate` 是用于处理公历中的日期的类。它有获取、比较或操作日期的方法。`QTime` 类用于处理时间。它提供了比较时间、确定时间和其他各种时间操作方法。`QDateTime` 是 `QDate` 和 `QTime` 的组合。
+PyQt6 有 `QDate`，`QDateTime`，`QTime` 类处理日期和时间。`QDate` 是用于处理公历中的日期的类。它有获取、比较或操作日期的方法。`QTime` 类用于处理时间。它提供了比较时间、确定时间和其他各种时间操作方法。`QDateTime` 是 `QDate` 和 `QTime` 的组合。
 
 ## PyQt 当前日期和时间
 
@@ -48,7 +39,7 @@ now = QDate.currentDate()
 print(now.toString(Qt.DateFormat.ISODate))
 print(now.toString(Qt.DateFormat.RFC2822Date))
 ```
-给 `toString` 传入不同的参数： `Qt.DateFormat.ISODate` 和 `Qt.DateFormat.RFC2822Date` 获取不同格式的日期。
+给 `toString` 传入不同的参数：`Qt.DateFormat.ISODate` 和 `Qt.DateFormat.RFC2822Date` 获取不同格式的日期。
 
 ```python 
 datetime = QDateTime.currentDateTime()
@@ -70,9 +61,9 @@ Fri Apr 23 11:41:39 2021
 11:41:39
 ```
 ## PyQt6 UTC 时间
-我们的星球是一个球体，绕着它自己的轴旋转。地球向东旋转，所以太阳在不同的时间在不同的地点升起。地球大约每24小时自转一次。因此，世界被划分为24个时区。在每个时区，都有不同的当地时间。当地时间通常会被夏时制进一步修改。
+我们的星球是一个球体，绕着它自己的轴旋转。地球向东旋转，所以太阳在不同的时间在不同的地点升起。地球大约每 24 小时自转一次。因此，世界被划分为 24 个时区。在每个时区，都有不同的当地时间。当地时间通常会被夏时制进一步修改。
 
-实际上也需要一个标准时间。一个标准时间有助于避免时区和夏令时的混淆。选择UTC(通用协调时间)作为主要的时间标准。UTC时间用于航空、天气预报、飞行计划、空中交通管制许可和地图。与当地时间不同，UTC时间不随季节变化而变化。
+实际上也需要一个标准时间。一个标准时间有助于避免时区和夏令时的混淆。选择 UTC (通用协调时间) 作为主要的时间标准。UTC 时间用于航空、天气预报、飞行计划、空中交通管制许可和地图。与当地时间不同，UTC 时间不随季节变化而变化。
 
 ``` python
 # file: utc_local.py
@@ -194,7 +185,7 @@ Adding 3 months: 2021-07-23T12:06:10
 Adding 12 years: 2033-04-23T12:06:10
 ```
 ## PyQt6 夏令时
-夏令时 (DST) 是在夏季调快时间，使晚上变得更长。 初春时调前调一小时，秋季时调后调至标准时间。
+夏令时 (DST) 是在夏季调快时间，使晚上变得更长。初春时调前调一小时，秋季时调后调至标准时间。
 ``` python
 # file: daylight_saving.py
 #!/usr/bin/python
@@ -229,12 +220,12 @@ $ ./daylight_saving.py
 Time zone: CEST
 The current date falls into DST time
 ```
-当前日期属于夏令时时间，中欧城市布拉迪斯拉发在夏季执行。 中欧夏令时 (CEST) 比世界时间早 2 小时。 该时区是夏令时时区，用于欧洲和南极洲。
+当前日期属于夏令时时间，中欧城市布拉迪斯拉发在夏季执行。中欧夏令时 (CEST) 比世界时间早 2 小时。该时区是夏令时时区，用于欧洲和南极洲。
 
 ## PyQt6 unix 纪元
-纪元是被选为特定纪元起源的时间瞬间。 例如，在西方基督教国家，时间纪元从耶稣诞生的第 0 天开始。 另一个例子是使用了十二年的法国共和历。 这个时代是共和时代的开始，1792 年 9 月 22 日宣布第一共和国成立，君主制也被废除。
+纪元是被选为特定纪元起源的时间瞬间。例如，在西方基督教国家，时间纪元从耶稣诞生的第 0 天开始。另一个例子是使用了十二年的法国共和历。这个时代是共和时代的开始，1792 年 9 月 22 日宣布第一共和国成立，君主制也被废除。
 
-计算机也有它的时代。 最受欢迎的时代之一是 Unix 时代。 Unix 纪元是 1970 年 1 月 1 日 UTC 时间 00:00:00（或 1970-01-01T00:00:00Z ISO 8601）。 计算机中的日期和时间是根据自该计算机或平台定义的纪元以来经过的秒数或时钟滴答数确定的。
+计算机也有它的时代。最受欢迎的时代之一是 Unix 时代。Unix 纪元是 1970 年 1 月 1 日 UTC 时间 00:00:00 (或 1970-01-01T00:00:00Z ISO 8601)。计算机中的日期和时间是根据自该计算机或平台定义的纪元以来经过的秒数或时钟滴答数确定的。
 
 Unix 时间是自 Unix 纪元以来经过的秒数。
 
@@ -242,7 +233,7 @@ Unix 时间是自 Unix 纪元以来经过的秒数。
 $ date +%s
 1619172620
 ```
-Unix date 命令可用于获取 Unix 时间。 在这个特殊的时刻，自 Unix 时代以来已经过去了 1619172620 秒。
+Unix date 命令可用于获取 Unix 时间。在这个特殊的时刻，自 Unix 时代以来已经过去了 1619172620 秒。
 
 ``` python
 # file: unix_time.py
@@ -284,9 +275,9 @@ $ ./unix_time.py
 2021-04-23T12:11:19
 ```
 ## PyQt6 儒略日
-儒略日是指自儒略时期开始以来的连续天数。 它主要由天文学家使用。 它不应与儒略历混淆。 它开始于公元前 4713 年。第 0 天是公元前 4713 年 1 月 1 日中午的那天。
+儒略日是指自儒略时期开始以来的连续天数。它主要由天文学家使用。它不应与儒略历混淆。它开始于公元前 4713 年。第 0 天是公元前 4713 年 1 月 1 日中午的那天。
 
-儒略日数 (JDN) 是自此期间开始以来经过的天数。 任何时刻的儒略日期 (JD) 是前一个中午的儒略日数加上自该时刻起当天的分数。（Qt 不计算这个分数。）除了天文学，儒略日期经常被军事和大型机程序使用。
+儒略日数 (JDN) 是自此期间开始以来经过的天数。任何时刻的儒略日期 (JD) 是前一个中午的儒略日数加上自该时刻起当天的分数。(Qt 不计算这个分数。) 除了天文学，儒略日期经常被军事和大型机程序使用。
 
 ``` python
 # file: julian_day.py
@@ -365,20 +356,3 @@ Days since Borodino battle: 76199
 当我们运行这个脚本时，距离斯拉夫科夫战役已经过去了 78670 天，距离博罗季诺战役已经过去了 76199 天。
 
 在 PyQt6 教程的这一部分中，我们使用了日期和时间。
-
-<script src="https://giscus.app/client.js"
-        data-repo="maicss/website"
-        data-repo-id="R_kgDOKnduBQ"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOKnduBc4Cas0c"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>

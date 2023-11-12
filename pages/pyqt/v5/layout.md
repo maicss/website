@@ -1,14 +1,6 @@
----
-prev:
-  text: '工具栏和菜单'
-  link: '/pyqt/v5/menusAndToolbars'
-next:
-  text: '事件与信号'
-  link: '/pyqt/v5/eventsAndSignals'
----
 # 布局管理
 
-在一个GUI程序里，布局是一个很重要的方面。布局就是如何管理应用中的元素和窗口。有两种方式可以搞定：绝对定位和PyQt5的layout类
+在一个 GUI 程序里，布局是一个很重要的方面。布局就是如何管理应用中的元素和窗口。有两种方式可以搞定：绝对定位和 PyQt5 的 layout 类
 
 ## 绝对定位
 
@@ -70,14 +62,14 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-我们使用move\(\)方法定位了每一个元素，使用x、y坐标。x、y坐标的原点是程序的左上角。
+我们使用 move\(\) 方法定位了每一个元素，使用 x、y 坐标。x、y 坐标的原点是程序的左上角。
 
 ```text
 lbl1 = QLabel('Zetcode', self)
 lbl1.move(15, 10)
 ```
 
-这个元素的左上角就在这个程序的左上角开始的\(15, 10\)的位置。
+这个元素的左上角就在这个程序的左上角开始的\(15，10\) 的位置。
 
 程序展示：
 
@@ -85,7 +77,7 @@ lbl1.move(15, 10)
 
 ## 盒布局
 
-使用盒布局能让程序具有更强的适应性。这个才是布局一个应用的更合适的方式。`QHBoxLayout`和`QVBoxLayout`是基本的布局类，分别是水平布局和垂直布局。
+使用盒布局能让程序具有更强的适应性。这个才是布局一个应用的更合适的方式。`QHBoxLayout` 和 `QVBoxLayout` 是基本的布局类，分别是水平布局和垂直布局。
 
 如果我们需要把两个按钮放在程序的右下角，创建这样的布局，我们只需要一个水平布局加一个垂直布局的盒子就可以了。再用弹性布局增加一点间隙。
 
@@ -146,7 +138,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-上面的例子完成了在应用的右下角放了两个按钮的需求。当改变窗口大小的时候，它们能依然保持在相对的位置。我们同时使用了`QHBoxLayout`和`QVBoxLayout`。
+上面的例子完成了在应用的右下角放了两个按钮的需求。当改变窗口大小的时候，它们能依然保持在相对的位置。我们同时使用了 `QHBoxLayout` 和 `QVBoxLayout`。
 
 ```text
 okButton = QPushButton("OK")
@@ -162,7 +154,7 @@ hbox.addWidget(okButton)
 hbox.addWidget(cancelButton)
 ```
 
-创建一个水平布局，并增加弹性空间和两个按钮。stretch函数在两个按钮前面增加了一块弹性空间，它会将按钮挤到窗口的右边。
+创建一个水平布局，并增加弹性空间和两个按钮。stretch 函数在两个按钮前面增加了一块弹性空间，它会将按钮挤到窗口的右边。
 
 ```text
 vbox = QVBoxLayout()
@@ -184,7 +176,7 @@ self.setLayout(vbox)
 
 ## 栅格布局
 
-最常用的还是栅格布局了。这种布局是把窗口分为行和列。创建和使用栅格布局，需要使用QGridLayout模块。
+最常用的还是栅格布局了。这种布局是把窗口分为行和列。创建和使用栅格布局，需要使用 QGridLayout 模块。
 
 ```python
 #!/usr/bin/python3
@@ -253,7 +245,7 @@ grid = QGridLayout()
 self.setLayout(grid)
 ```
 
-创建一个QGridLayout实例，并把它放到程序窗口里。
+创建一个 QGridLayout 实例，并把它放到程序窗口里。
 
 ```text
 names = ['Cls', 'Bck', '', 'Close',
@@ -280,7 +272,7 @@ for position, name in zip(positions, names):
     grid.addWidget(button, *position)
 ```
 
-创建按钮，并使用`addWidget()`方法把按钮放到布局里面。
+创建按钮，并使用 `addWidget()` 方法把按钮放到布局里面。
 
 程序预览：
 
@@ -354,7 +346,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-我们创建了一个有三个标签的窗口。两个行编辑和一个文版编辑，这是用`QGridLayout`模块搞定的。
+我们创建了一个有三个标签的窗口。两个行编辑和一个文版编辑，这是用 `QGridLayout` 模块搞定的。
 
 ```text
 grid = QGridLayout()
@@ -367,9 +359,8 @@ grid.setSpacing(10)
 grid.addWidget(reviewEdit, 3, 1, 5, 1)
 ```
 
-我们可以指定组件的跨行和跨列的大小。这里我们指定这个元素跨5行显示。
+我们可以指定组件的跨行和跨列的大小。这里我们指定这个元素跨 5 行显示。
 
 程序预览：
 
 ![review example](images/3-review.png)
-

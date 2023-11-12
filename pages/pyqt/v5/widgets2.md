@@ -1,18 +1,10 @@
----
-prev:
-  text: '组件(1)'
-  link: '/pyqt/v5/widgets1'
-next:
-  text: '拖放'
-  link: '/pyqt/v5/DND'
----
-# 组件(2)
+# 组件 (二)
 
-本章我们继续介绍PyQt5组件。这次的有`QPixmap`，`QLineEdit`，`QSplitter`，和`QComboBox`。
+本章我们继续介绍 PyQt5 组件。这次的有 `QPixmap`，`QLineEdit`，`QSplitter`，和 `QComboBox`。
 
 ## 图片
 
-`QPixmap`是处理图片的组件。本例中，我们使用`QPixmap`在窗口里显示一张图片。
+`QPixmap` 是处理图片的组件。本例中，我们使用 `QPixmap` 在窗口里显示一张图片。
 
 ```python
 #!/usr/bin/python3
@@ -69,14 +61,14 @@ if __name__ == '__main__':
 pixmap = QPixmap("redrock.png")
 ```
 
-创建一个`QPixmap`对象，接收一个文件作为参数。
+创建一个 `QPixmap` 对象，接收一个文件作为参数。
 
 ```text
 lbl = QLabel(self)
 lbl.setPixmap(pixmap)
 ```
 
-把`QPixmap`实例放到`QLabel`组件里。
+把 `QPixmap` 实例放到 `QLabel` 组件里。
 
 程序展示：
 
@@ -84,7 +76,7 @@ lbl.setPixmap(pixmap)
 
 ## 行编辑
 
-`QLineEdit`组件提供了编辑文本的功能，自带了撤销、重做、剪切、粘贴、拖放等功能。
+`QLineEdit` 组件提供了编辑文本的功能，自带了撤销、重做、剪切、粘贴、拖放等功能。
 
 ```python
 #!/usr/bin/python3
@@ -149,13 +141,13 @@ if __name__ == '__main__':
 qle = QLineEdit(self)
 ```
 
-创建一个`QLineEdit`对象。
+创建一个 `QLineEdit` 对象。
 
 ```text
 qle.textChanged[str].connect(self.onChanged)
 ```
 
-如果输入框的值有变化，就调用`onChanged()`方法。
+如果输入框的值有变化，就调用 `onChanged()` 方法。
 
 ```text
 def onChanged(self, text):
@@ -164,7 +156,7 @@ def onChanged(self, text):
     self.lbl.adjustSize()
 ```
 
-在`onChanged()`方法内部，我们把文本框里的值赋值给了标签组件，然后调用`adjustSize()`方法让标签自适应文本内容。
+在 `onChanged()` 方法内部，我们把文本框里的值赋值给了标签组件，然后调用 `adjustSize()` 方法让标签自适应文本内容。
 
 程序展示：
 
@@ -172,7 +164,7 @@ def onChanged(self, text):
 
 ## QSplitter
 
-`QSplitter`组件能让用户通过拖放分割线的方式改变子窗口大小的组件。本例中我们展示用两个分割线隔开的三个`QFrame`组件。
+`QSplitter` 组件能让用户通过拖放分割线的方式改变子窗口大小的组件。本例中我们展示用两个分割线隔开的三个 `QFrame` 组件。
 
 ```python
 #!/usr/bin/python3
@@ -259,7 +251,7 @@ splitter1.addWidget(topleft)
 splitter1.addWidget(topright)
 ```
 
-创建一个`QSplitter`组件，并在里面添加了两个框架。
+创建一个 `QSplitter` 组件，并在里面添加了两个框架。
 
 ```text
 splitter2 = QSplitter(Qt.Vertical)
@@ -274,7 +266,7 @@ splitter2.addWidget(splitter1)
 
 ## 下拉选框
 
-`QComboBox`组件能让用户在多个选择项中选择一个。
+`QComboBox` 组件能让用户在多个选择项中选择一个。
 
 ```python
 #!/usr/bin/python3
@@ -337,7 +329,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-本例包含了一个`QComboBox`和一个`QLabel`。下拉选择框有五个选项，都是Linux的发行版名称，标签内容为选定的发行版名称。
+本例包含了一个 `QComboBox` 和一个 `QLabel`。下拉选择框有五个选项，都是 Linux 的发行版名称，标签内容为选定的发行版名称。
 
 ```text
 combo = QComboBox(self)
@@ -348,13 +340,13 @@ combo.addItem("Arch")
 combo.addItem("Gentoo")
 ```
 
-创建一个`QComboBox`组件和五个选项。
+创建一个 `QComboBox` 组件和五个选项。
 
 ```text
 combo.activated[str].connect(self.onActivated)
 ```
 
-在选中的条目上调用`onActivated()`方法。
+在选中的条目上调用 `onActivated()` 方法。
 
 ```text
 def onActivated(self, text):
@@ -368,4 +360,3 @@ def onActivated(self, text):
 程序展示：
 
 ![QComboBox](images/7-qcombobox.png)
-

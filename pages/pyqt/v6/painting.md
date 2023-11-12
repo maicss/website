@@ -1,14 +1,6 @@
----
-prev:
-  text: '拖放'
-  link: '/pyqt/v6/DND'
-next:
-  text: '自定义组件'
-  link: '/pyqt/v6/customWidgets'
----
-# PyQt6 的绘制
+# PyQt6 的绘画
 
-PyQt6绘画系统能够呈现矢量图形、图像和基于字体的文本轮廓。想要更改或增强现有的小部件，或者从头创建自定义小部件时，需要 PyQt6 工具包提供的绘图 API 进行绘制。
+PyQt6 绘画系统能够呈现矢量图形、图像和基于字体的文本轮廓。想要更改或增强现有的小部件，或者从头创建自定义小部件时，需要 PyQt6 工具包提供的绘图 API 进行绘制。
 ## QPainter
 QPainter 在小部件和其他可绘制单元上执行底层绘制。从简单的线条到复杂的形状，它可以画任何东西。
 
@@ -103,7 +95,7 @@ qp.setFont(QFont('Decorative', 10))
 ``` python
 qp.drawText(event.rect(), Qt.AlignmentFlag.AlignCenter, self.text)
 ```
-drawText 方法在窗口上绘制文本。paintEvent 的rect方法返回需要更新的矩形。用 `Qt.AlignmentFlag.AlignCenter` 在两个维度上对齐文本。
+drawText 方法在窗口上绘制文本。paintEvent 的 rect 方法返回需要更新的矩形。用 `Qt.AlignmentFlag.AlignCenter` 在两个维度上对齐文本。
 
 ![Drawing text](./images/drawingtext.png)
 
@@ -178,7 +170,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-上例中，在窗口里绘制了1000个随机的红点。
+上例中，在窗口里绘制了 1000 个随机的红点。
 
 ``` python
 qp.setPen(Qt.GlobalColor.red)
@@ -200,7 +192,7 @@ qp.drawPoint(x, y)
 
 ## PyQt6 颜色
 
-颜色是表示红色、绿色和蓝色 (RGB) 强度值组合的对象。有效的 RGB 值的范围是0到255。可以用不同的方法定义一种颜色。最常见的是RGB十进制值或十六进制值。还可以使用 RGBA 值，它代表红色、绿色、蓝色和 Alpha 通道，添加了透明度信息。Alpha 值为255定义完全不透明，0表示完全透明，也就是颜色不可见。
+颜色是表示红色、绿色和蓝色 (RGB) 强度值组合的对象。有效的 RGB 值的范围是 0 到 255。可以用不同的方法定义一种颜色。最常见的是 RGB 十进制值或十六进制值。还可以使用 RGBA 值，它代表红色、绿色、蓝色和 Alpha 通道，添加了透明度信息。Alpha 值为 255 定义完全不透明，0 表示完全透明，也就是颜色不可见。
 
 ``` python
 #!/usr/bin/python
@@ -276,13 +268,13 @@ if __name__ == '__main__':
 color = QColor(0, 0, 0)
 color.setNamedColor('#d4d4d4')
 ```
-使用16进制定义颜色。
+使用 16 进制定义颜色。
 
 ``` python
 qp.setBrush(QColor(200, 0, 0))
 qp.drawRect(10, 15, 90, 60)
 ```
-这里定义一个笔刷并绘制一个矩形。画笔是一种基本的图形对象，用于绘制形状的背景。drawRect 方法接受四个参数，前两个是轴上的x和y值，第三和第四个参数是矩形的宽度和高度，使用选择的笔触和笔刷绘制矩形。
+这里定义一个笔刷并绘制一个矩形。画笔是一种基本的图形对象，用于绘制形状的背景。drawRect 方法接受四个参数，前两个是轴上的 x 和 y 值，第三和第四个参数是矩形的宽度和高度，使用选择的笔触和笔刷绘制矩形。
 
 ![Colours](./images/colours.png)
 
@@ -374,19 +366,19 @@ if __name__ == '__main__':
     main()
 ```
 
-示例中，我们画了6条线。线条是用六种不同的笔触风格样式的。有五种预定义的笔触。我们也可以创建自定义笔触样式。最后一条线是使用自定义笔触风格样式的。
+示例中，我们画了 6 条线。线条是用六种不同的笔触风格样式的。有五种预定义的笔触。我们也可以创建自定义笔触样式。最后一条线是使用自定义笔触风格样式的。
 
 ``` python
 pen = QPen(Qt.GlobalColor.black, 2, Qt.PenStyle.SolidLine)
 ```
-这里创建了一个 `QPen` 对象，颜色是黑色，宽度2像素，这样就能区别不同的笔触。`Qt.SolidLine` 是一个预定义的笔触。
+这里创建了一个 `QPen` 对象，颜色是黑色，宽度 2 像素，这样就能区别不同的笔触。`Qt.SolidLine` 是一个预定义的笔触。
 
 ``` python
 pen.setStyle(Qt.PenStyle.CustomDashLine)
 pen.setDashPattern([1, 4, 5, 4])
 qp.setPen(pen)
 ```
-这里我们自定义了一个笔触。样式设置为 `Qt.PenStyle。CustomDashLine`，用 `setDashPattern` 方法设置具体样式，参数一定是偶数个，奇数定义破折号，偶数定义空格。数字越大，空格或破折号就越大。这里设置的是1px横线，4px空格，5px横线，4px空格等等。
+这里我们自定义了一个笔触。样式设置为 `Qt.PenStyle。CustomDashLine`，用 `setDashPattern` 方法设置具体样式，参数一定是偶数个，奇数定义破折号，偶数定义空格。数字越大，空格或破折号就越大。这里设置的是 1px 横线，4px 空格，5px 横线，4px 空格等等。
 
 ![Pen styles](./images/penstyles.png)
 
@@ -487,7 +479,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-示例中绘制了9个不同的矩形。
+示例中绘制了 9 个不同的矩形。
 
 ``` python
 brush = QBrush(Qt.BrushStyle.SolidPattern)
@@ -501,7 +493,7 @@ qp.drawRect(10, 15, 90, 60)
 图示：笔刷
 
 ## 贝塞尔曲线
-贝塞尔曲线是三次方曲线。PyQt6 中的贝塞尔曲线可以用 `QPainterPath` 创建。画线路径是由许多图形构建块(如矩形、椭圆、直线和曲线)组成的对象。
+贝塞尔曲线是三次方曲线。PyQt6 中的贝塞尔曲线可以用 `QPainterPath` 创建。画线路径是由许多图形构建块 (如矩形、椭圆、直线和曲线) 组成的对象。
 
 ``` python
 #!/usr/bin/python
@@ -566,7 +558,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-This example draws a Bézier curve.
+This example draws a Bézier curve。
 
 ```python
 path = QPainterPath()
@@ -583,5 +575,3 @@ qp.drawPath(path)
 ![Bézier curve](./images/beziercurve.png)
 
 图示：贝塞尔曲线
-
-本章讲解了基本的绘画。

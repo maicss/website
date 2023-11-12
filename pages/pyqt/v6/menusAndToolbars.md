@@ -1,11 +1,3 @@
----
-prev:
-  text: '第一个程序'
-  link: '/pyqt/v6/firstProgram'
-next:
-  text: '布局管理'
-  link: '/pyqt/v6/layout'
----
 # PyQt6 的菜单和工具栏
 
 在这部分教程中，我们创建了一个状态栏、菜单栏和工具栏。菜单是位于菜单栏中的一组命令。工具栏有一些按钮和应用程序中的一些常用命令。状态栏显示状态信息，通常位于应用程序窗口的底部。
@@ -63,10 +55,10 @@ if __name__ == '__main__':
 ``` python
 self.statusBar().showMessage('Ready')
 ```
-使用 `QtGui.QMainWindow` 方法创建状态栏，该方法的创建了一个状态栏，并返回statusbar对象，再调用 `showMessage` 方法在状态栏上显示一条消息。
+使用 `QtGui.QMainWindow` 方法创建状态栏，该方法的创建了一个状态栏，并返回 statusbar 对象，再调用 `showMessage` 方法在状态栏上显示一条消息。
 
 ## PyQt6 简单菜单
-菜单栏在GUI应用程序中很常见，它是位于各种菜单中的一组命令。(Mac OS 对菜单栏的处理是不同的，要得到类似的结果，我们可以添加下面这行: `menubar.setNativeMenuBar(False)`
+菜单栏在 GUI 应用程序中很常见，它是位于各种菜单中的一组命令。(Mac OS 对菜单栏的处理是不同的，要得到类似的结果，我们可以添加下面这行：`menubar.setNativeMenuBar(False)`
 ``` python
 #!/usr/bin/python
 # file: simple_menu.py
@@ -128,7 +120,7 @@ exitAct = QAction(QIcon('exit.png'), '&Exit', self)
 exitAct.setShortcut('Ctrl+Q')
 exitAct.setStatusTip('Exit application')
 ```
-`QAction` 是行为抽象类，包括菜单栏，工具栏，或自定义键盘快捷方式。在上面的三行中，创建了一个带有特定图标和 'Exit' 标签的行为。此外，还为该行为定义了一个快捷方式。第三行创建一个状态提示，当我们将鼠标指针悬停在菜单项上时，状态栏中就会显示这个提示。
+`QAction` 是行为抽象类，包括菜单栏，工具栏，或自定义键盘快捷方式。在上面的三行中，创建了一个带有特定图标和 ‘Exit’ 标签的行为。此外，还为该行为定义了一个快捷方式。第三行创建一个状态提示，当我们将鼠标指针悬停在菜单项上时，状态栏中就会显示这个提示。
 ``` python
 exitAct.triggered.connect(QApplication.instance().quit)
 ```
@@ -210,7 +202,7 @@ impAct = QAction('Import mail', self)
 impMenu.addAction(impAct)
 ```
 
-使用`addAction` 给子菜单添加行为.
+使用 `addAction` 给子菜单添加行为。
 
 ![Submenu](./images/submenu.png)
 
@@ -526,5 +518,3 @@ self.setCentralWidget(textEdit)
 ![Main window](./images/mainwindow.png)
 
 图示：主窗口
-
-本部分 PyQt6 教程，我们展示了菜单，工具栏，状态栏和主程序窗口。

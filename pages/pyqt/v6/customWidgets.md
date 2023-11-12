@@ -1,11 +1,3 @@
----
-prev:
-  text: '绘图'
-  link: '/pyqt/v6/painting'
-next:
-  text: '俄罗斯方块'
-  link: '/pyqt/v6/tetris'
----
 # PyQt6 自定义组件
 
 PyQt6 已经有丰富的组件，但是没有任何工具包能提供开发者开发应用中需要的全部组件。工具包通常只提供最常见的小组件，如按钮、文本小组件或滑块。如果需要满足特定需求的小组件，我们必须自己创建。
@@ -170,7 +162,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-这个示例中，有一个 `QSlider` 和一个自定义小组件——滑块控制自定义小组件。此小组件以图形方式显示介质的总容量和可用的可用空间。自定义小组件的最小值为 1，最大值为 `OVER_CAPACITY`。 如果值达到 `MAX_CAPACITY` ，会变成红色，代表需要烧录的数据大于介质的容量。
+这个示例中，有一个 `QSlider` 和一个自定义小组件——滑块控制自定义小组件。此小组件以图形方式显示介质的总容量和可用的可用空间。自定义小组件的最小值为 1，最大值为 `OVER_CAPACITY`。如果值达到 `MAX_CAPACITY`，会变成红色，代表需要烧录的数据大于介质的容量。
 
 烧录组件位于窗口底部。用 `QHBoxLayout` 和 `QVBoxLayout` 实现。
 
@@ -226,6 +218,4 @@ def changeValue(self, value):
 
 ![The burning widget](./images/burning.png)
 
-图示: 烧录组件
-
-本章的 PyQt6 教程里，我们创建了一个自定义组件。
+图示：烧录组件

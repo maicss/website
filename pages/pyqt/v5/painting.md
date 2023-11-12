@@ -1,20 +1,12 @@
----
-prev:
-  text: '拖放'
-  link: '/pyqt/v5/DND'
-next:
-  text: '自定义组件'
-  link: '/pyqt/v5/customWidgets'
----
-# 绘图
+# 绘画
 
-PyQt5绘图系统能渲染矢量图像、位图图像和轮廓字体文本。一般会使用在修改或者提高现有组件的功能，或者创建自己的组件。使用PyQt5的绘图API进行操作。
+PyQt5 绘画系统能渲染矢量图像、位图图像和轮廓字体文本。一般会使用在修改或者提高现有组件的功能，或者创建自己的组件。使用 PyQt5 的绘画 API 进行操作。
 
-绘图由`paintEvent()`方法完成，绘图的代码要放在`QPainter`对象的`begin()`和`end()`方法之间。是低级接口。
+绘画由 `paintEvent()` 方法完成，绘画的代码要放在 `QPainter` 对象的 `begin()` 和 `end()` 方法之间。是低级接口。
 
 ### 文本涂鸦
 
-我们从画一些Unicode文本开始。
+我们从画一些 Unicode 文本开始。
 
 ```python
 #!/usr/bin/python3
@@ -74,7 +66,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-写了一些文本上下居中对齐的俄罗斯Cylliric语言的文字。
+写了一些文本上下居中对齐的俄罗斯 Cylliric 语言的文字。
 
 ```text
 def paintEvent(self, event):
@@ -90,7 +82,7 @@ self.drawText(event, qp)
 qp.end()
 ```
 
-`QPainter`是低级的绘画类。所有的绘画动作都在这个类的`begin()`和`end()`方法之间完成，绘画动作都封装在`drawText()`内部了。
+`QPainter` 是低级的绘画类。所有的绘画动作都在这个类的 `begin()` 和 `end()` 方法之间完成，绘画动作都封装在 `drawText()` 内部了。
 
 ```text
 qp.setPen(QColor(168, 34, 3))
@@ -103,7 +95,7 @@ qp.setFont(QFont('Decorative', 10))
 qp.drawText(event.rect(), Qt.AlignCenter, self.text)
 ```
 
-`drawText()`方法在窗口里绘制文本，`rect()`方法返回要更新的矩形区域。
+`drawText()` 方法在窗口里绘制文本，`rect()` 方法返回要更新的矩形区域。
 
 程序展示：
 
@@ -174,7 +166,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-我们在窗口里随机的画出了1000个点。
+我们在窗口里随机的画出了 1000 个点。
 
 ```text
 qp.setPen(Qt.red)
@@ -186,13 +178,13 @@ qp.setPen(Qt.red)
 size = self.size()
 ```
 
-每次更改窗口大小，都会产生绘画事件，从`size()`方法里获得当前窗口的大小，然后把产生的点随机的分配到窗口的所有位置上。
+每次更改窗口大小，都会产生绘画事件，从 `size()` 方法里获得当前窗口的大小，然后把产生的点随机的分配到窗口的所有位置上。
 
 ```text
 qp.drawPoint(x, y)
 ```
 
-`drawPoint()`方法绘图。
+`drawPoint()` 方法绘画。
 
 程序展示：
 
@@ -200,7 +192,7 @@ qp.drawPoint(x, y)
 
 ## 颜色
 
-颜色是一个物体显示的RGB的混合色。RBG值的范围是0~255。我们有很多方式去定义一个颜色，最常见的方式就是RGB和16进制表示法，也可以使用RGBA，增加了一个透明度的选项，透明度值的范围是0~1，0代表完全透明。
+颜色是一个物体显示的 RGB 的混合色。RBG 值的范围是 0~255。我们有很多方式去定义一个颜色，最常见的方式就是 RGB 和 16 进制表示法，也可以使用 RGBA，增加了一个透明度的选项，透明度值的范围是 0~1，0 代表完全透明。
 
 ```python
 #!/usr/bin/python3
@@ -274,14 +266,14 @@ color = QColor(0, 0, 0)
 color.setNamedColor('#d4d4d4')
 ```
 
-使用16进制的方式定义一个颜色。
+使用 16 进制的方式定义一个颜色。
 
 ```text
 qp.setBrush(QColor(200, 0, 0))
 qp.drawRect(10, 15, 90, 60)
 ```
 
-定义了一个笔刷，并画出了一个矩形。笔刷是用来画一个物体的背景。`drawRect()`有四个参数，分别是矩形的x、y、w、h。 然后用笔刷和矩形进行绘画。
+定义了一个笔刷，并画出了一个矩形。笔刷是用来画一个物体的背景。`drawRect()` 有四个参数，分别是矩形的 x、y、w、h。然后用笔刷和矩形进行绘画。
 
 程序展示：
 
@@ -289,7 +281,7 @@ qp.drawRect(10, 15, 90, 60)
 
 ### QPen
 
-`QPen`是基本的绘画对象，能用来画直线、曲线、矩形框、椭圆、多边形和其他形状。
+`QPen` 是基本的绘画对象，能用来画直线、曲线、矩形框、椭圆、多边形和其他形状。
 
 ```python
 #!/usr/bin/python3
@@ -370,13 +362,13 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-在这个例子里，我们用不同的笔画了6条直线。PyQt5有五个预定义的笔，另外一个笔的样式使我们自定义的。
+在这个例子里，我们用不同的笔画了 6 条直线。PyQt5 有五个预定义的笔，另外一个笔的样式使我们自定义的。
 
 ```text
 pen = QPen(Qt.black, 2, Qt.SolidLine)
 ```
 
-新建一个`QPen`对象，设置颜色黑色，宽2像素，这样就能看出来各个笔样式的区别。`Qt.SolidLine`是预定义样式的一种。
+新建一个 `QPen` 对象，设置颜色黑色，宽 2 像素，这样就能看出来各个笔样式的区别。`Qt.SolidLine` 是预定义样式的一种。
 
 ```text
 pen.setStyle(Qt.CustomDashLine)
@@ -384,7 +376,7 @@ pen.setDashPattern([1, 4, 5, 4])
 qp.setPen(pen)
 ```
 
-这里我们自定义了一个笔的样式。定义为`Qt.CustomDashLine`然后调用`setDashPattern()`方法。数字列表是线的样式，要求必须是个数为奇数，奇数位定义的是空格，偶数位为线长，数字越大，空格或线长越大，比如本例的就是1像素线，4像素空格，5像素线，4像素空格。
+这里我们自定义了一个笔的样式。定义为 `Qt.CustomDashLine` 然后调用 `setDashPattern()` 方法。数字列表是线的样式，要求必须是个数为奇数，奇数位定义的是空格，偶数位为线长，数字越大，空格或线长越大，比如本例的就是 1 像素线，4 像素空格，5 像素线，4 像素空格。
 
 程序展示：
 
@@ -392,7 +384,7 @@ qp.setPen(pen)
 
 ### QBrush
 
-`QBrush`也是图像的一个基本元素。是用来填充一些物体的背景图用的，比如矩形，椭圆，多边形等。有三种类型：预定义、渐变和纹理。
+`QBrush` 也是图像的一个基本元素。是用来填充一些物体的背景图用的，比如矩形，椭圆，多边形等。有三种类型：预定义、渐变和纹理。
 
 ```python
 #!/usr/bin/python3
@@ -483,7 +475,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-我们画了9个不同的矩形。
+我们画了 9 个不同的矩形。
 
 ```text
 brush = QBrush(Qt.SolidPattern)
@@ -491,7 +483,7 @@ qp.setBrush(brush)
 qp.drawRect(10, 15, 90, 60)
 ```
 
-创建了一个笔刷对象，添加笔刷样式，然后调用`drawRect()`方法画图。
+创建了一个笔刷对象，添加笔刷样式，然后调用 `drawRect()` 方法画图。
 
 程序展示：
 
@@ -499,7 +491,7 @@ qp.drawRect(10, 15, 90, 60)
 
 ### 贝塞尔曲线
 
-噩梦可以使用PyQt5的`QPainterPath`创建贝塞尔曲线。绘画路径是由许多构建图形的对象，具体表现就是一些线的形状，比如矩形，椭圆，线和曲线。
+噩梦可以使用 PyQt5 的 `QPainterPath` 创建贝塞尔曲线。绘画路径是由许多构建图形的对象，具体表现就是一些线的形状，比如矩形，椭圆，线和曲线。
 
 ```python
 #!/usr/bin/python3
@@ -569,15 +561,15 @@ path.moveTo(30, 30)
 path.cubicTo(30, 30, 200, 350, 350, 30)
 ```
 
-用`QPainterPath`路径创建贝塞尔曲线。使用`cubicTo()`方法生成，分别需要三个点：起始点，控制点和终止点。
+用 `QPainterPath` 路径创建贝塞尔曲线。使用 `cubicTo()` 方法生成，分别需要三个点：起始点，控制点和终止点。
 
 ```python
 qp.drawPath(path)
 ```
 
-`drawPath()`绘制最后的图像。
+`drawPath()` 绘制最后的图像。
 
 程序展示：
 
-![B&#xE9;zier curve](./images/9-beziercurve.webp)
+![beziercurve](./images/9-beziercurve.webp)
 

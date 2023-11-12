@@ -1,14 +1,6 @@
----
-prev:
-  text: '事件与信号'
-  link: '/pyqt/v6/eventsAndSignals'
-next:
-  text: '组件(1)'
-  link: '/pyqt/v6/widgets1'
----
 # PyQt6 的对话框
 
-对话是两个或更多人之间的交谈。在计算机程序中，对话框是用于与应用程序“交谈”的窗口，用于诸如从用户那里获取数据或更改应用程序设置之类的事情。
+对话是两个或更多人之间的交谈。在计算机程序中，对话框是用于与应用程序 “交谈” 的窗口，用于诸如从用户那里获取数据或更改应用程序设置之类的事情。
 
 ## PyQt6 QInputDialog
 `QInputDialog` 提供了一个简单方便的对话框来从用户那里获取输入。输入值可以是字符串、数字或列表中的项目。
@@ -170,7 +162,7 @@ col = QColor(0, 0, 0)
 ``` python
 col = QColorDialog.getColor()
 ```
-这一行弹出 `QColorDialog` 。
+这一行弹出 `QColorDialog`。
 ``` python
 if col.isValid():
 

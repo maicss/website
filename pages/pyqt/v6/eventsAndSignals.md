@@ -1,17 +1,9 @@
----
-prev:
-  text: '布局管理'
-  link: '/pyqt/v6/layout'
-next:
-  text: '对话框'
-  link: '/pyqt/v6/dialogs'
----
-# PyQt6 事件和信号
+# PyQt6 的事件和信号
 
 这部分教程，我们探索 PyQt6 程序中的事件和信号。
 
 ## PyQt6 中的事件
-GUI 应用程序是事件驱动的。事件主要由应用程序的用户触发，但也可以通过其他方式生成，例如 Internet 连接、窗口管理器或定时器。当我们调用应用程序的 `exec()` 方法时，应用程序进入主循环。 主循环获取事件并将它们发送到对象。
+GUI 应用程序是事件驱动的。事件主要由应用程序的用户触发，但也可以通过其他方式生成，例如 Internet 连接、窗口管理器或定时器。当我们调用应用程序的 `exec()` 方法时，应用程序进入主循环。主循环获取事件并将它们发送到对象。
 
 在事件模型里，有三个要素：
 
@@ -19,10 +11,10 @@ GUI 应用程序是事件驱动的。事件主要由应用程序的用户触发�
 - 事件对象 event object
 - 事件目标 event target
 
-事件源是状态改变的对象，它会产生事件。*event object*（事件）封装了事件源中的状态变化。 *event target* 是要被通知的对象。事件源对象将处理事件的任务委托给事件目标。
+事件源是状态改变的对象，它会产生事件。*event object* (事件) 封装了事件源中的状态变化。*event target* 是要被通知的对象。事件源对象将处理事件的任务委托给事件目标。
 
 PyQt6 有独特的信号和插槽机制来处理事件，用于对象之间的通信，当特定事件发生时触发。插槽可以是任意可调用的 Python 脚本。当发出连接的信号时，调用插槽脚本
-> 译注：可以理解成钩子 (hooks) 或回调函数(callback)。
+> 译注：可以理解成钩子 (hooks) 或回调函数 (callback)。
 
 ## PyQt6 信号和插槽
 下面的示例展示了 PyQt6 的信号和插槽。
@@ -85,17 +77,17 @@ if __name__ == '__main__':
 ``` python
 sld.valueChanged.connect(lcd.display)
 ```
-把滑块的 `valueChanged` 事件和 显示器 `display` 插槽绑定到一起。
+把滑块的 `valueChanged` 事件和显示器 `display` 插槽绑定到一起。
 
-*sender* 是触发信号的对象， *receiver* 是接收信号的对象，*slot* 是对信号做出反应的方法。
+*sender* 是触发信号的对象，*receiver* 是接收信号的对象，*slot* 是对信号做出反应的方法。
 
 ![信号和插槽](./images/sigslot.png)
 
-图示: 信号和插槽
+图示：信号和插槽
 
 ## PyQt6 重新实现事件处理器
 
-PyQt6里，事件的处理器一般都会重新实现。
+PyQt6 里，事件的处理器一般都会重新实现。
 > 译注：所有的事件处理器都有默认的实现，也就是默认事件。默认事件可能有自己的逻辑，比如拖选，点击，有的可能只是一个空函数。空函数都需要重新覆盖原来的实现，达到事件处理的目的。有默认事件处理函数的，也有可能被覆盖实现，比如禁用自带的拖选，或者重写拖选的效果等。
 
 ``` python
@@ -245,7 +237,7 @@ self.label = QLabel(self.text, self)
 
 ![事件对象](./images/eventobject.png)
 
-图示: 事件对象
+图示：事件对象
 
 # PyQt6 事件触发者
 
@@ -313,7 +305,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-本例中有两个按钮。 `buttonClicked`  调用触发者方法确定了是哪个按钮触发的事件。
+本例中有两个按钮。`buttonClicked` 调用触发者方法确定了是哪个按钮触发的事件。
 ``` python
 btn1.clicked.connect(self.buttonClicked)
 btn2.clicked.connect(self.buttonClicked)
@@ -331,7 +323,7 @@ def buttonClicked(self):
 
 ![事件触发者](./images/eventsender.png)
 
-图示: 事件触发者
+图示：事件触发者
 
 ## PyQt6 触发信号
 
@@ -413,5 +405,3 @@ def mousePressEvent(self, event):
     self.c.closeApp.emit()
 ```
 在窗口上点击鼠标按钮的时候，触发 `closeApp` 信号，程序终止。
-
-本章教程，我们讲述了信号和插槽。

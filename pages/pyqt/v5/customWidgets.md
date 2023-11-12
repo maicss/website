@@ -1,20 +1,12 @@
----
-prev:
-  text: '绘图'
-  link: '/pyqt/v5/painting'
-next:
-  text: '俄罗斯方块'
-  link: '/pyqt/v5/tetris'
----
 # 自定义组件
 
-PyQt5有丰富的组件，但是肯定满足不了所有开发者的所有需求，PyQt5只提供了基本的组件，像按钮，文本，滑块等。如果你还需要其他的模块，应该尝试自己去自定义一些。
+PyQt5 有丰富的组件，但是肯定满足不了所有开发者的所有需求，PyQt5 只提供了基本的组件，像按钮，文本，滑块等。如果你还需要其他的模块，应该尝试自己去自定义一些。
 
 自定义组件使用绘画工具创建，有两个基本方式：根据已有的创建或改进；通过自己绘图创建。
 
 ## Burning widget
 
-这个组件我们会在Nero，K3B，或者其他CD/DVD烧录软件中见到。
+这个组件我们会在 Nero，K3B，或者其他 CD/DVD 烧录软件中见到。
 
 ```python
 #!/usr/bin/python3
@@ -169,9 +161,9 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-本例中，我们使用了`QSlider`和一个自定义组件，由进度条控制。显示的有物体（也就是CD/DVD）的总容量和剩余容量。进度条的范围是1~750。如果值达到了700（OVER\_CAPACITY），就显示为红色，代表了烧毁了的意思。
+本例中，我们使用了 `QSlider` 和一个自定义组件，由进度条控制。显示的有物体 (也就是 CD/DVD) 的总容量和剩余容量。进度条的范围是 1~750。如果值达到了 700 (OVER\_CAPACITY)，就显示为红色，代表了烧毁了的意思。
 
-烧录组件在窗口的底部，这个组件是用`QHBoxLayout`和`QVBoxLayout`组成的。
+烧录组件在窗口的底部，这个组件是用 `QHBoxLayout` 和 `QVBoxLayout` 组成的。
 
 ```python
 class BurningWidget(QWidget):
@@ -180,7 +172,7 @@ class BurningWidget(QWidget):
         super().__init__()
 ```
 
-基于`QWidget`组件。
+基于 `QWidget` 组件。
 
 ```text
 self.setMinimumSize(1, 30)
@@ -226,7 +218,7 @@ def changeValue(self, value):
     self.wid.repaint()
 ```
 
-拖动滑块的时候，调用了`changeValue()`方法。这个方法内部，我们自定义了一个可以传参的updateBW信号。参数就是滑块的当前位置。这个数值之后还用来于Burning组件，然后重新渲染Burning组件。
+拖动滑块的时候，调用了 `changeValue()` 方法。这个方法内部，我们自定义了一个可以传参的 updateBW 信号。参数就是滑块的当前位置。这个数值之后还用来于 Burning 组件，然后重新渲染 Burning 组件。
 
 ![burning widget](./images/10-burning.png)
 

@@ -1,12 +1,12 @@
 # Chrome-shanbay-V2 Privacy Policy
 
-Chrome-shanbay-v2（以下简称插件）是一款利用 Shanbay（shanbay.com）的 API，给用户提供在阅读英文网页时候便利的查询单词含义及发音的工具。
+Chrome-shanbay-v2 (以下简称插件) 是一款利用 Shanbay (shanbay.com) 的 API，给用户提供在阅读英文网页时候便利的查询单词含义及发音的工具。
 
 为了达到这个目的，插件需要：
 
 - 使用 Cookies 权限，读取您在 Shanbay 站点的，以调用 Shanbay API 获取单词释义及音频。
 - 使用 Tabs 权限，在没有获取到 Cookies 数据的时候，创建新的 tab 打开 login.shanbay.com 引导用户登录。
-- 使用 contextMenu 权限，提供在网页上选中单词的时候，在右键菜单里加入“在扇贝网上查找...”的功能。
+- 使用 contextMenu 权限，提供在网页上选中单词的时候，在右键菜单里加入 “在扇贝网上查找...” 的功能。
 - 使用 storage 权限，存储和读取用户设置，提供用户根据需要定制该插件的能力。
 - 使用 alarms 权限，获取今日单词任务，提醒用户学习单词。
 - 使用 notifications 权限，定时弹出文本框，提醒用户学习单词。
