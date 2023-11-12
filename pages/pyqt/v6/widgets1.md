@@ -1,15 +1,6 @@
----
-prev:
-  text: '对话框'
-  link: '/pyqt/v6/dialogs'
-next:
-  text: '组件(2)'
-  link: '/pyqt/v6/widgets2'
----
+# PyQt6 组件 (一)
 
-# PyQt6 组件（一）
-
-组件是应用程序的基础组成部分。PyQt6 具有各种各样的小部件，包括按钮、复选框、滑块或列表框。在本节教程中，我们将介绍几个有用的小部件：QCheckBox、QPushButton、QSlider、QProgressBar和QCalendarWidget。
+组件是应用程序的基础组成部分。PyQt6 具有各种各样的小部件，包括按钮、复选框、滑块或列表框。在本节教程中，我们将介绍几个有用的小部件：QCheckBox、QPushButton、QSlider、QProgressBar 和 QCalendarWidget。
 
 ## PyQt6 QCheckBox
 `QCheckBox` 组件有两个状态：选中和非选中。由个选框和文字组成，主要用于表示某个属性时开启还是关闭。
@@ -226,7 +217,7 @@ self.square.setStyleSheet("QFrame { background-color: %s }" %
 图示：切换按钮
 
 ## PyQt6 QSlider
-QSlider是一个有简单手柄的小部件，这个手柄可以前后拖动。通过这种方式，我们可以为特定的任务选择一个值。有时使用滑块比输入数字或使用旋转框更自然。
+QSlider 是一个有简单手柄的小部件，这个手柄可以前后拖动。通过这种方式，我们可以为特定的任务选择一个值。有时使用滑块比输入数字或使用旋转框更自然。
 
 在我们的示例中，我们显示了一个滑块和一个标签。标签显示一个图像。滑块控制标签。
 
@@ -321,7 +312,7 @@ if value == 0:
     self.label.setPixmap(QPixmap('mute.png'))
 ...
 ```
-根据滑块的值，修改标签的图像。在上面的代码中，如果滑块等于零，把标签改为mute.png图像。
+根据滑块的值，修改标签的图像。在上面的代码中，如果滑块等于零，把标签改为 mute.png 图像。
 
 ![QSlider widget](./images/qslider.png)
 
@@ -329,7 +320,7 @@ if value == 0:
 
 ## PyQt6 QProgressBar
 
-进度条是一个用于处理冗长任务的小部件。它是动态的，以便用户知道任务正在进行中。`QProgressBar` 小部件在 PyQt6 工具包中提供了一个水平或垂直的进度条。可以设置进度条的最小值和最大值，默认值为0和99。
+进度条是一个用于处理冗长任务的小部件。它是动态的，以便用户知道任务正在进行中。`QProgressBar` 小部件在 PyQt6 工具包中提供了一个水平或垂直的进度条。可以设置进度条的最小值和最大值，默认值为 0 和 99。
 
 ``` python
 #!/usr/bin/python
@@ -432,7 +423,7 @@ def timerEvent(self, e):
     self.step = self.step + 1
     self.pbar.setValue(self.step)
 ```
-每个`QObject` 和它的后代都有一个 `timerEvent` 事件处理器，这里实现一些函数处理这些事件。
+每个 `QObject` 和它的后代都有一个 `timerEvent` 事件处理器，这里实现一些函数处理这些事件。
 ``` python
 def doAction(self):
 

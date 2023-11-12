@@ -1,19 +1,10 @@
----
-prev:
-  text: '第一个程序'
-  link: '/pyqt/v5/firstProgram'
-next:
-  text: '布局管理'
-  link: '/pyqt/v5/layout'
----
-
 # 菜单和工具栏
 
 这个章节，我们会创建状态栏、菜单和工具栏。菜单是一组位于菜单栏的命令。工具栏是应用的一些常用工具按钮。状态栏显示一些状态信息，通常在应用的底部。
 
 ## 主窗口
 
-`QMainWindow`提供了主窗口的功能，使用它能创建一些简单的状态栏、工具栏和菜单栏。
+`QMainWindow` 提供了主窗口的功能，使用它能创建一些简单的状态栏、工具栏和菜单栏。
 
 主窗口是下面这些窗口的合称，所以教程在最下方。
 
@@ -63,19 +54,19 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-状态栏是由QMainWindow创建的。
+状态栏是由 QMainWindow 创建的。
 
 ```text
 self.statusBar().showMessage('Ready')
 ```
 
-调用`QtGui.QMainWindow`类的`statusBar()`方法，创建状态栏。第一次调用会创建一个状态栏，而再次调用会返回一个状态栏对象。`showMessage()`方法在状态栏上显示一条信息。
+调用 `QtGui.QMainWindow` 类的 `statusBar()` 方法，创建状态栏。第一次调用会创建一个状态栏，而再次调用会返回一个状态栏对象。`showMessage()` 方法在状态栏上显示一条信息。
 
-程序预览： ![status](images/2-status.png)
+程序预览：![status](images/2-status.png)
 
 ## 菜单栏
 
-菜单栏是非常常用的。是一组命令的集合（Mac OS下状态栏的显示不一样，为得到最相似的外观，我们可以增加一行语句`menubar.setNativeMenuBar(False)`\)。
+菜单栏是非常常用的。是一组命令的集合 (Mac OS 下状态栏的显示不一样，为得到最相似的外观，我们可以增加一行语句 `menubar.setNativeMenuBar(False)`\)。
 
 ```python
 #!/usr/bin/python3
@@ -130,7 +121,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-在上面的示例中，我们创建了只有一个命令的菜单栏，这个命令就是终止应用。同时也创建了一个状态栏。而且还能使用快捷键`Ctrl+Q`退出应用。
+在上面的示例中，我们创建了只有一个命令的菜单栏，这个命令就是终止应用。同时也创建了一个状态栏。而且还能使用快捷键 `Ctrl+Q` 退出应用。
 
 ```text
 exitAct = QAction(QIcon('exit.png'), '&Exit', self)        
@@ -138,13 +129,13 @@ exitAct.setShortcut('Ctrl+Q')
 exitAct.setStatusTip('Exit application')
 ```
 
-`QAction`是菜单栏、工具栏或者快捷键的动作的组合。上面三行中，前两行创建了一个图标、一个exit的标签和一个快捷键组合，都执行了一个动作；第三行，创建了一个状态栏，当鼠标悬停在菜单栏的时候，能显示当前状态。
+`QAction` 是菜单栏、工具栏或者快捷键的动作的组合。上面三行中，前两行创建了一个图标、一个 exit 的标签和一个快捷键组合，都执行了一个动作；第三行，创建了一个状态栏，当鼠标悬停在菜单栏的时候，能显示当前状态。
 
 ```text
 exitAct.triggered.connect(qApp.quit)
 ```
 
-当执行这个指定的动作时，就触发了一个事件。这个事件跟`QApplication的quit()`行为相关联，所以这个动作就能终止这个应用。
+当执行这个指定的动作时，就触发了一个事件。这个事件跟 `QApplication的quit()` 行为相关联，所以这个动作就能终止这个应用。
 
 ```text
 menubar = self.menuBar()
@@ -152,9 +143,9 @@ fileMenu = menubar.addMenu('&File')
 fileMenu.addAction(exitAct)
 ```
 
-`menuBar()`创建菜单栏。这里创建了一个菜单栏，并用`addMenu()`在上面添加了一个file菜单，用`addAction()`关联了点击退出应用的事件。
+`menuBar()` 创建菜单栏。这里创建了一个菜单栏，并用 `addMenu()` 在上面添加了一个 file 菜单，用 `addAction()` 关联了点击退出应用的事件。
 
-程序预览： ![menu](images/2-menu.png)
+程序预览：![menu](images/2-menu.png)
 
 ## 子菜单
 
@@ -211,22 +202,22 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-这个例子里，有两个子菜单，一个在File菜单下面，一个在File的Import下面。
+这个例子里，有两个子菜单，一个在 File 菜单下面，一个在 File 的 Import 下面。
 
 ```text
 impMenu = QMenu('Import', self)
 ```
 
-使用`QMenu`创建一个新菜单。
+使用 `QMenu` 创建一个新菜单。
 
 ```text
 impAct = QAction('Import mail', self) 
 impMenu.addAction(impAct)
 ```
 
-使用`addAction()`添加一个动作。
+使用 `addAction()` 添加一个动作。
 
-程序预览： ![submenu](images/2-submenu.png)
+程序预览：![submenu](images/2-submenu.png)
 
 ## 勾选菜单
 
@@ -291,13 +282,13 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-本例创建了一个行为菜单。这个行为／动作能切换状态栏显示或者隐藏。
+本例创建了一个行为菜单。这个行为 ／ 动作能切换状态栏显示或者隐藏。
 
 ```text
 viewStatAct = QAction('View statusbar', self, checkable=True)
 ```
 
-用`checkable`选项创建一个能选中的菜单。
+用 `checkable` 选项创建一个能选中的菜单。
 
 ```text
 viewStatAct.setChecked(True)
@@ -314,13 +305,13 @@ def toggleMenu(self, state):
         self.statusbar.hide()
 ```
 
-依据选中状态切换状态栏的显示与否。 程序预览：
+依据选中状态切换状态栏的显示与否。程序预览：
 
 ![checkmenu](images/2-checkmenu.png)
 
 ## 右键菜单
 
-右键菜单也叫弹出框（！？），是在某些场合下显示的一组命令。例如，Opera浏览器里，网页上的右键菜单里会有刷新，返回或者查看页面源代码。如果在工具栏上右键，会得到一个不同的用来管理工具栏的菜单。
+右键菜单也叫弹出框 (！？)，是在某些场合下显示的一组命令。例如，Opera 浏览器里，网页上的右键菜单里会有刷新，返回或者查看页面源代码。如果在工具栏上右键，会得到一个不同的用来管理工具栏的菜单。
 
 ```python
 #!/usr/bin/python3
@@ -374,13 +365,13 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
-还是使用`contextMenuEvent()`方法实现这个菜单。
+还是使用 `contextMenuEvent()` 方法实现这个菜单。
 
 ```text
 action = cmenu.exec_(self.mapToGlobal(event.pos()))
 ```
 
-使用`exec_()`方法显示菜单。从鼠标右键事件对象中获得当前坐标。`mapToGlobal()`方法把当前组件的相对坐标转换为窗口（window）的绝对坐标。
+使用 `exec_()` 方法显示菜单。从鼠标右键事件对象中获得当前坐标。`mapToGlobal()` 方法把当前组件的相对坐标转换为窗口 (window) 的绝对坐标。
 
 ```text
 if action == quitAct:
@@ -454,14 +445,14 @@ exitAct.setShortcut('Ctrl+Q')
 exitAct.triggered.connect(qApp.quit)
 ```
 
-和上面的菜单栏差不多，这里使用了一个行为对象，这个对象绑定了一个标签，一个图标和一个快捷键。这些行为被触发的时候，会调用`QtGui.QMainWindow`的quit方法退出应用。
+和上面的菜单栏差不多，这里使用了一个行为对象，这个对象绑定了一个标签，一个图标和一个快捷键。这些行为被触发的时候，会调用 `QtGui.QMainWindow` 的 quit 方法退出应用。
 
 ```text
 self.toolbar = self.addToolBar('Exit')
 self.toolbar.addAction(exitAct)
 ```
 
-用`addToolBar()`创建工具栏，并用`addAction()`将动作对象添加到工具栏。
+用 `addToolBar()` 创建工具栏，并用 `addAction()` 将动作对象添加到工具栏。
 
 程序预览：
 
@@ -471,7 +462,7 @@ self.toolbar.addAction(exitAct)
 
 主窗口就是上面三种栏目的总称，现在我们把上面的三种栏在一个应用里展示出来。
 
-> 首先要自己弄个小图标，命名为exit24.png
+> 首先要自己弄个小图标，命名为 exit24.png
 
 ```python
 #!/usr/bin/python3
@@ -540,7 +531,7 @@ textEdit = QTextEdit()
 self.setCentralWidget(textEdit)
 ```
 
-这里创建了一个文本编辑区域，并把它放在`QMainWindow`的中间区域。这个组件会占满所有剩余的区域。
+这里创建了一个文本编辑区域，并把它放在 `QMainWindow` 的中间区域。这个组件会占满所有剩余的区域。
 
 程序预览：
 

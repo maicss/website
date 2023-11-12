@@ -1,19 +1,16 @@
 ---
-prev:
-  text: '自定义组件'
-  link: '/pyqt/v6/customWidgets'
 next:
   text: '教程首页'
   link: '/pyqt/'
 ---
-# 俄罗斯方块
+# 俄罗斯方块游戏
 
 本章实现一个俄罗斯方块游戏。
 
 ## 简介
 俄罗斯方块游戏是有史以来最受欢迎的电脑游戏之一。最初的游戏是由俄罗斯程序员 Alexey Pajitnov 在1985年设计并编写的。从那时起，《俄罗斯方块》便以多种形式出现在几乎所有平台上。
 
-俄罗斯方块被称为掉落方块拼图游戏。在这款游戏中，我们有7种不同的形状，叫做砖块（tetrminoes）：S形、Z形、T形、L形、线形、反向L形和方形。每个形状都是由四个正方形组成的。这些形状从顶部掉落。《俄罗斯方块》游戏的目标是移动和旋转形状，尽可能的拼到一起，如果拼成一行，这一行会消失，这样就能得分，直到方块堆叠到顶部，游戏结束。
+俄罗斯方块被称为掉落方块拼图游戏。在这款游戏中，我们有 7 种不同的形状，叫做砖块 (tetrminoes)：S 形、Z 形、T 形、L 形、线形、反向 L 形和方形。每个形状都是由四个正方形组成的。这些形状从顶部掉落。《俄罗斯方块》游戏的目标是移动和旋转形状，尽可能的拼到一起，如果拼成一行，这一行会消失，这样就能得分，直到方块堆叠到顶部，游戏结束。
 
 ![Tetrominoes](./images/tetrominoes.png)
 
@@ -26,11 +23,11 @@ PyQt6 目标是创建应用程序，有些其他的库的目标是创造电脑�
 ## 开发
 因为没有游戏砖块的图片，所以这里使用 PyQt6 编程工具包中的绘图 API 来绘制砖块。每一款电脑游戏的背后都有一个数学模型，俄罗斯方块也是如此。
 
-一些思路:
+一些思路：
 
 - 使用 `QtCore.QBasicTimer` 创建游戏循环
 - 画出砖块
-- 砖块整体旋转或移动（不是分开操作）
+- 砖块整体旋转或移动 (不是分开操作)
 - 数学意义上，游戏面板是个简单的数字列表
 
 代码包含四个类：`Tetris`，`Board`，`Tetrominoe` 和 `Shape`。`Tetris` 类设置了游戏。`Board` 是编写游戏逻辑的地方。`Tetrominoe` 类包含所有俄罗斯方块的名称，`Shape` 类包含俄罗斯方块的代码。
@@ -576,7 +573,7 @@ self.setCentralWidget(self.tboard)
 self.statusbar = self.statusBar()
 self.tboard.msg2Statusbar[str].connect(self.statusbar.showMessage)
 ```
-这里创建一个状态栏，用于显示消息。我们将显示三种可能的消息:已经删除的行数，暂停消息，或游戏结束消息。`msg2Statusbar` 是在 Board 类中实现的自定义信号。`showMessage` 是一个内置方法，用于在状态栏上显示消息。
+这里创建一个状态栏，用于显示消息。我们将显示三种可能的消息：已经删除的行数，暂停消息，或游戏结束消息。`msg2Statusbar` 是在 Board 类中实现的自定义信号。`showMessage` 是一个内置方法，用于在状态栏上显示消息。
 
 ``` python
 self.tboard.start()
@@ -596,7 +593,7 @@ BoardWidth = 10
 BoardHeight = 22
 Speed = 300
 ```
-这些是 `Board` 的参数。`BoardWidth` 和 `BoardHeight` 定义画板的宽高。 `Speed` 是游戏的速度，每300毫秒游戏循环进行一次。
+这些是 `Board` 的参数。`BoardWidth` 和 `BoardHeight` 定义画板的宽高。`Speed` 是游戏的速度，每 300 毫秒游戏循环进行一次。
 
 ``` python
 ...
@@ -606,7 +603,7 @@ self.numLinesRemoved = 0
 self.board = []
 ...
 ```
-在 `initBoard` 方法中，我们初始化一些变量。`self.board` 是一个从0到7的数字列表，代表了砖块的各种形状和位置信息。
+在 `initBoard` 方法中，我们初始化一些变量。`self.board` 是一个从 0 到 7 的数字列表，代表了砖块的各种形状和位置信息。
 
 ``` python
 def shapeAt(self, x, y):
@@ -683,7 +680,7 @@ if self.curPiece.shape() != Tetrominoe.NoShape:
 elif key == Qt.Key.Key_Right.value:
     self.tryMove(self.curPiece, self.curX + 1, self.curY)
 ```
-在 `keyPressEvent` 方法中，我们检查按下的键。如果按下右箭头键，将尝试部件向右移动。说“尝试”是因为它可能无法移动。
+在 `keyPressEvent` 方法中，我们检查按下的键。如果按下右箭头键，将尝试部件向右移动。说 “尝试” 是因为它可能无法移动。
 
 ```python
 elif key == Qt.Key.Key_Up.value:
@@ -701,7 +698,7 @@ elif key == Qt.Key.Key_Space.value:
 elif key == Qt.Key.Key_D.value:
     self.oneLineDown()
 ```
-按下D键，则会让砖块加速下落一会。
+按下 D 键，则会让砖块加速下落一会。
 
 ```python
 def timerEvent(self, event):
@@ -758,7 +755,7 @@ def removeFullLines(self):
     numFullLines = numFullLines + len(rowsToRemove)
  ...
 ```
-如果砖块落在底部，就调用 `removeFullLines` 方法，找出所有完整的一行并删除。将所有行移动到当前整行的位置上，做到删除的效果。注意，我们颠倒了要删除的行的顺序，不然会出现BUG，在我们的例子中，我们使用了 `naive gravity`，这意味着不是整行的砖块可能漂浮在空白的间隙之上。
+如果砖块落在底部，就调用 `removeFullLines` 方法，找出所有完整的一行并删除。将所有行移动到当前整行的位置上，做到删除的效果。注意，我们颠倒了要删除的行的顺序，不然会出现 BUG，在我们的例子中，我们使用了 `naive gravity`，这意味着不是整行的砖块可能漂浮在空白的间隙之上。
 
 ```python
 def newPiece(self):
@@ -837,10 +834,10 @@ self.coords = [[0,0] for i in range(4)]
 
 ![Coordinates](./images/coordinates.png)
 
-图示: 坐标
+图示：坐标
 
 上面的图能帮助我们更好的理解坐标值的意义。比如，`(0, -1), (0, 0), (-1, 0), (-1, -1)
-` 代表了Z字形的砖块，图示里就是这个形状。
+` 代表了 Z 字形的砖块，图示里就是这个形状。
 
 ``` python
 def rotateLeft(self):
@@ -863,4 +860,4 @@ def rotateLeft(self):
 
 ![Tetris](./images/tetris.png)
 
-图示: 俄罗斯方块
+图示：俄罗斯方块

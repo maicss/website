@@ -1,14 +1,6 @@
----
-prev:
-  text: '组件(1)'
-  link: '/pyqt/v6/widgets1'
-next:
-  text: '拖放'
-  link: '/pyqt/v6/DND'
----
-# PyQt6 组件（二）
+# PyQt6 组件 (二)
 
-本章继续介绍 PyQt6 组件，包含了`QPixmap`, `QLineEdit`, `QSplitter` 和 `QComboBox`。
+本章继续介绍 PyQt6 组件，包含了 `QPixmap`，`QLineEdit`，`QSplitter` 和 `QComboBox`。
 
 ## PyQt6 QPixmap
 `QPixmap` 是用于处理图像的小组件，为显示图像进行了优化。下面是使用 `QPixmap` 渲染图像的示例。
@@ -79,7 +71,7 @@ lbl.setPixmap(pixmap)
 然后把 `pixmap` 放到 `QLabel` 组件里。
 
 ## PyQt6 QLineEdit
-QLineEdit是一个可以输入单行文本的组件，它有撤消和重做、剪切和粘贴以及拖放功能。
+QLineEdit 是一个可以输入单行文本的组件，它有撤消和重做、剪切和粘贴以及拖放功能。
 
 ``` python
 #!/usr/bin/python
@@ -162,7 +154,7 @@ def onChanged(self, text):
 图示：QLineEdit
 
 ## PyQt6 QSplitter
-`QSplitter` 允许用户通过拖动子部件之间的边界来控制子部件的大小。下面是被两个分割条分开的三个`QFrame` 组件的示例。
+`QSplitter` 允许用户通过拖动子部件之间的边界来控制子部件的大小。下面是被两个分割条分开的三个 `QFrame` 组件的示例。
 ``` python
 #!/usr/bin/python
 # file: splitter.py
@@ -322,7 +314,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-示例中有一个 `QComboBox` 和一个 `QLabel`。下拉选框有一个包含五个选项的列表，是Linux发行版的名称。标签组件显示组合框中选择的选项。
+示例中有一个 `QComboBox` 和一个 `QLabel`。下拉选框有一个包含五个选项的列表，是 Linux 发行版的名称。标签组件显示组合框中选择的选项。
 
 ``` python
 combo = QComboBox(self)

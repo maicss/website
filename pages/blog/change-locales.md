@@ -1,9 +1,9 @@
-# Configuring Locales 
+# Configuring Locales
 ## The Easy Way
- - Install debconf (i.e. run apt-get update then apt-get install debconf, as root)
+ - Install debconf (i.e. run apt-get update then apt-get install debconf，as root)
  - Run dpkg-reconfigure locales as root
 ## The Hard Way
-Edit `/etc/locale.gen` as root. If `/etc/locale.gen` does not exist, create it. An example `/etc/locale.gen` is below.
+Edit `/etc/locale.gen` as root。If `/etc/locale.gen` does not exist，create it。An example `/etc/locale.gen` is below。
 Run `/usr/sbin/locale-gen` as root
 A sample `/etc/locale.gen`
 ```
@@ -23,4 +23,4 @@ A sample `/etc/locale.gen`
 en_US.UTF-8 UTF-8
 ```
 ## pve pvm resize disk
-pct resize {{ VMID }} rootfs {{ LXC_disk_size }}
+`pct resize <VMID> rootfs <LXC_disk_size>`

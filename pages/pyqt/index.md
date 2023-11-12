@@ -1,3 +1,7 @@
+---
+prev: false
+next: false
+---
 # 欢迎
 
 欢迎来到 PyQt 中文教程，这里提供了 PyQt5 和 PyQt6 两个教程。

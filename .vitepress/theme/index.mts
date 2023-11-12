@@ -1,7 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import './custom.css'
-import GiscusLayout from './giscusLayout.vue'
+import GiscusLayout from './GiscusLayout.vue'
 
 export default {
     extends: DefaultTheme,
