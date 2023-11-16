@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Maicss",
-  description: "Miacss' website",
+  description: "Miacss' website pyqt 中文 教程 pyqt5 pyqt6",
   // base: '/',
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
