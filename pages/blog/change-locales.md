@@ -1,7 +1,15 @@
+---
+date: 2022-10-11
+auth: maicss
+image: post-image.jpeg
+---
+
 # Configuring Locales
+Some commands used in my daily life
 ## The Easy Way
  - Install debconf (i.e. run apt-get update then apt-get install debconf，as root)
  - Run dpkg-reconfigure locales as root
+<!--more-->
 ## The Hard Way
 Edit `/etc/locale.gen` as root。If `/etc/locale.gen` does not exist，create it。An example `/etc/locale.gen` is below。
 Run `/usr/sbin/locale-gen` as root

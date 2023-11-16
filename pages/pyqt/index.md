@@ -36,10 +36,10 @@ next: false
     transition: all 0.15s;
     cursor: pointer;
     border-radius: 4px;
-    border: 1px solid #e3e8ed;
+    border: 1px solid var(--vp-c-divider);
     padding: 16px;
     flex: 1;
-    color: #3b454e;
+    color: var(--vp-c-text-1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,6 +49,7 @@ next: false
 .card:hover {
     box-shadow: 0px 12px 13px rgba(0,0,0,0.02);
     transform: translateY(-2px);
+    border-color: var(--vp-c-brand-1);
     color: #3884ff;
     text-decoration: underline;
     text-underline-offset: 4px;
