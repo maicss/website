@@ -105,19 +105,6 @@ export default defineConfig({
           ],
         },
       ],
-
-      // This sidebar gets displayed when a user
-      // is on `config` directory.
-      "/blog/": [
-        {
-          text: "Config",
-          items: [
-            { text: "Index", link: "/config/" },
-            { text: "Three", link: "/config/three" },
-            { text: "Four", link: "/config/four" },
-          ],
-        },
-      ],
     },
     socialLinks: [{ icon: "github", link: "https://github.com/maicss" }],
     footer: {

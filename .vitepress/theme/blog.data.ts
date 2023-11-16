@@ -15,12 +15,15 @@ export { data }
 
 export default createContentLoader('/pages/blog/*.md', {
   excerpt: '<!--more-->',
+  render: false,
   transform(raw): Post[] {
     return raw
+    .filter(({url}) => url !== '/blog/')
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title,
         url,
         excerpt,
+        image: frontmatter.image,
         date: formatDate(frontmatter.date)
       }))
       .sort((a, b) => b.date.time - a.date.time)

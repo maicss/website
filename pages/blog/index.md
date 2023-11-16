@@ -1,12 +1,11 @@
 ---
-title: 'blog index'
-date: 2023-01-01
-author: Maicss
+prev: false
+next: false
+aside: false
+outline: 1
+lastUpdated: false
+editLink: false
+layout: page
 ---
 
-# blog index
-
-## list
-
-- [change locales](./change-locales.md)
-- [comment test](./comment-test.md)
+<BlogIndex/>

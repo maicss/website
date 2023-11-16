@@ -6,8 +6,8 @@ based on [VitePress](https://vitepress.dev/)
 
 > 参考链接 https://github.com/vuejs/blog/tree/main/.vitepress
 
-- [ ] 文章中英文空格
-- [ ] 滚动条定制
+- [x] 文章中英文空格
+- [x] 滚动条定制
 - [ ] 文章用词等校准
     - [ ] pyqt5
     - [ ] pyqt6
