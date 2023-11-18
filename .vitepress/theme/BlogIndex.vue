@@ -2,6 +2,8 @@
 import { useData } from 'vitepress'
 import { data } from './blog.data'
 import {ref, computed} from 'vue'
+import ArrowLeft from './assets/arrow-left.svg'
+import ArrowRight from './assets/arrow-right.svg'
 const { frontmatter } = useData()
 
 const PRE_PAGE = 15
@@ -40,11 +42,11 @@ const changePage = (page:number|'prev'|'next') => {
     <div class="pagination my-8 select-none" v-if="pageTotal > 1">
       <ul class="flex gap-x-4 justify-center items-center">
         <li class="bordered rounded w-8 h-8 bg-slate-100 flex justify-center items-center cursor-pointer hover:text-sky-400" @click="changePage('prev')">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" fill="currentColor" /></svg>
+          <ArrowLeft width="20px"/>
         </li>
-        <li v-for="index in pageTotal" class="bordered rounded w-8 h-8 bg-slate-100 flex justify-center items-center cursor-pointer" :class="[pageCurrent === index ? ' bg-sky-300 text-white' : 'text-black hover:text-sky-300']" @click="changePage(index)">{{ index }}</li>
+        <li v-for="index in pageTotal" class="bordered rounded w-8 h-8 flex justify-center items-center cursor-pointer" :class="[pageCurrent === index ? ' bg-sky-300 text-white' : 'text-black hover:text-sky-300 bg-slate-100']" @click="changePage(index)">{{ index }}</li>
         <li class="bordered rounded w-8 h-8 bg-slate-100 flex justify-center items-center cursor-pointer hover:text-sky-400" @click="changePage('next')">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" fill="currentColor" /></svg>
+          <ArrowRight width="20px"/>
         </li>
       </ul>
     </div>

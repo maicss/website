@@ -5,7 +5,14 @@ export default {
   plugins: [
     tailwind({
       content: ['./.vitepress/theme/**/*.vue'],
-      plugins: [tailwindTypography]
+      plugins: [tailwindTypography],
+      theme: {
+        extend: {
+          spacing: {
+            '100': '25rem'
+          }
+        },
+      },
     })
   ]
 }

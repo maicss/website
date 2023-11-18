@@ -1,4 +1,6 @@
-import { defineConfig } from "vitepress";
+/// <reference types="vite-svg-loader" />
+import { defineConfig } from "vitepress"
+import svgLoader from 'vite-svg-loader'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -125,6 +127,14 @@ export default defineConfig({
   },
   sitemap: {
     hostname: "https://maicss.com",
+  },
+  transformHead (context) {
+    console.log('transformHead', context)
+  },
+  vite: {
+    plugins: [svgLoader({
+      defaultImport: 'component'
+    })]
   },
   // buildEnd: genFeed
 });
