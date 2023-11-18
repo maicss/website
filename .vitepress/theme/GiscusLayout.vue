@@ -3,8 +3,7 @@
 <script setup lang="ts">
 import { useData, useRoute, useRouter } from "vitepress";
 import DefaultTheme from "vitepress/theme-without-fonts";
-import { nextTick, onMounted, ref, watch } from "vue";
-import { onUnmounted } from "../cache/deps/vue.js";
+import { nextTick, onMounted, ref, watch, onUnmounted } from "vue";
 const { Layout } = DefaultTheme;
 const { page, frontmatter, isDark } = useData();
 // import useFoldCode from './composables/useFoldCode'
