@@ -1,28 +1,124 @@
 <!-- .vitepress/theme/Layout.vue -->
 
 <script setup lang="ts">
-import { useData, useRoute, useRouter } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import { nextTick, onMounted, ref, watch, provide } from 'vue';
-import BlogIndex from './BlogIndex.vue';
-const { Layout } = DefaultTheme
-const { page, frontmatter, isDark } = useData()
+import { useData, useRoute, useRouter } from "vitepress";
+import DefaultTheme from "vitepress/theme-without-fonts";
+import { nextTick, onMounted, ref, watch } from "vue";
+import { onUnmounted } from "../cache/deps/vue.js";
+const { Layout } = DefaultTheme;
+const { page, frontmatter, isDark } = useData();
+// import useFoldCode from './composables/useFoldCode'
 
-const route = useRoute()
-const router = useRouter()
+// useFoldCode()
+const route = useRoute();
+const router = useRouter();
 
-const NoCommentPages = ['/', '/pyqt/', '/blog/']
-const mountComment = ref(false)
+const NoCommentPages = ["/", "/pyqt/", "/blog/"];
+const mountComment = ref(false);
+
+const foldCode = () => {
+  if (frontmatter.value.codeFolder !== false) {
+    const codeblocks = document.querySelectorAll(
+      `.vp-doc div[class*='language-']`
+    ) as unknown as HTMLDivElement[];
+
+    if (codeblocks.length) {
+      codeblocks.forEach((codeblock) => {
+        if (parseFloat(getComputedStyle(codeblock).height) > 400) {
+          codeblock.classList.add("h-100");
+          codeblock.classList.add("transition-all");
+          // codeblock.classList.add("ease-linear");
+          const pres = codeblock.querySelectorAll("pre");
+          pres.forEach((pre) => {
+            pre.classList.add("h-100");
+            pre.classList.add("transition-all");
+            // pre.classList.add("ease-linear");
+            pre.classList.add("mb-12");
+            pre.classList.add("overflow-hidden");
+          });
+          const codeFoldMask = document.createElement("div");
+          codeFoldMask.className = "code-fold-mask";
+          codeFoldMask.innerHTML =
+            '<svg viewBox="0 0 1024 1024" width="24px" class="code-fold-button" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8 316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496z"></path></svg>';
+          codeFoldMask.addEventListener("click", () => {
+            const svg = codeFoldMask.querySelector("svg")!;
+            if (svg.classList.contains("reverse")) {
+              svg.classList.remove("reverse");
+              codeblock.classList.add("h-100");
+              pres.forEach((pre) => {
+                pre.classList.add("h-100");
+                pre.classList.add("overflow-hidden");
+              });
+            } else {
+              svg.classList.add("reverse");
+              codeblock.classList.remove("h-100");
+              pres.forEach((pre) => {
+                pre.classList.remove("h-100");
+                pre.classList.remove("overflow-hidden");
+              });
+            }
+          });
+          codeblock.insertAdjacentElement("beforeend", codeFoldMask);
+        }
+      });
+    }
+  }
+};
+
+const changeCommentPluginTheme = () => {
+  const element = document.querySelector("#giscus");
+  if (mountComment.value && element) {
+    element.setAttribute("theme", isDark.value ? "transparent_dark" : "light");
+  }
+};
+
+const imageViewer = () => {
+  const images = document.querySelectorAll(
+    ".vp-doc img"
+  ) as unknown as HTMLImageElement[];
+  const mask:HTMLDivElement = document.querySelector('.mask')!
+  images.forEach((img) => {
+    img.onload = () => {
+      if (img.naturalHeight > img.width) {
+        img.classList.add("cursor-zoom-in");
+        img.addEventListener('click', () => {
+          mask.classList.remove('invisible')
+          mask.classList.add('visible')
+          const maskImage = document.createElement('img')
+          maskImage.classList.add('w-4/5')
+          maskImage.src = img.src
+          mask.appendChild(maskImage)
+        })
+      }
+    };
+  });
+};
+
+const maskClickHide = () => {
+  const mask = document.querySelector('.mask')
+  mask?.addEventListener('click', () => {
+    mask.classList.remove('visible')
+    mask.classList.add('invisible')
+    mask.innerHTML = ''
+  })
+}
 
 onMounted(() => {
-  import('giscus')
-  handleCommentComponent()
+  import("giscus");
+  handleCommentComponent();
+  nextTick(changeCommentPluginTheme);
+  foldCode();
+  imageViewer();
+  maskClickHide()
 });
 
 const handleCommentComponent = () => {
-  const showComment = !NoCommentPages.includes(route.path) && frontmatter.value?.comment !== false && page.value.isNotFound !== true
-  mountComment.value = showComment
-}
+  const showComment =
+    !NoCommentPages.includes(route.path) &&
+    frontmatter.value?.comment !== false &&
+    page.value.isNotFound !== true;
+  mountComment.value = showComment;
+};
 
 // const enableTransitions = () =>
 //   'startViewTransition' in document &&
@@ -41,12 +137,12 @@ const handleCommentComponent = () => {
 //       Math.max(y, innerHeight - y)
 //     )}px at ${x}px ${y}px)`
 //   ]
-
+//
 //   await document.startViewTransition(async () => {
 //     isDark.value = !isDark.value
 //     await nextTick()
 //   }).ready
-
+//
 //   document.documentElement.animate(
 //     { clipPath: isDark.value ? clipPath.reverse() : clipPath },
 //     {
@@ -59,48 +155,96 @@ const handleCommentComponent = () => {
 
 router.onBeforeRouteChange = async (to) => {
   if (document.startViewTransition) {
-    await document.startViewTransition()
+    await document.startViewTransition();
   }
-}
+};
 
-watch(() => route.path, () => {
-  nextTick().then(handleCommentComponent).then(() => {
-    if (mountComment.value) {
-      document.querySelector('#giscus')!.setAttribute('theme', isDark.value ? 'transparent_dark' : 'light')
-    }
-  })
-})
-
-watch([isDark], () => {
-  if (mountComment.value) {
-    document.querySelector('#giscus')!.setAttribute('theme', isDark.value ? 'transparent_dark' : 'light')
+const unwatchRoutePath = watch(
+  () => route.path,
+  () => {
+    nextTick().then(handleCommentComponent).then(changeCommentPluginTheme);
   }
-})
+);
+
+const unwatchTheme = watch([isDark], () => {
+  changeCommentPluginTheme();
+});
+
+onUnmounted(() => {
+  unwatchRoutePath();
+  unwatchTheme();
+});
 </script>
 
 <template>
   <Layout>
     <template #doc-bottom>
       <div class="giscus-container" v-if="mountComment">
-        <giscus-widget v-pre id="giscus" repo="maicss/website" repoid="R_kgDOKnduBQ" category="Announcements"
-          categoryid="DIC_kwDOKnduBc4Cas0c" mapping="pathname" term="Welcome to Maicss' site" strict="0"
-          :reactionsenabled="true" emitmetadata="0" inputposition="top" theme="light" lang="zh-CN">
+        <giscus-widget
+          v-pre
+          id="giscus"
+          repo="maicss/website"
+          repoid="R_kgDOKnduBQ"
+          category="Announcements"
+          categoryid="DIC_kwDOKnduBc4Cas0c"
+          mapping="pathname"
+          term="Welcome to Maicss' site"
+          strict="0"
+          :reactionsenabled="true"
+          emitmetadata="0"
+          inputposition="top"
+          theme="light"
+          lang="zh-CN"
+        >
           <p>Loading comments...</p>
         </giscus-widget>
       </div>
     </template>
   </Layout>
   <div class="progress"></div>
+  <Teleport to="body">
+    <div class="mask invisible fixed inset-0 bg-black/80 z-50 flex items-center justify-center transition-all"></div>
+  </Teleport>
 </template>
 
 <style>
 .giscus-container {
+  position: relative;
+  z-index: 5;
+
   @media (min-width: 1200px) {
-    width: 786px;
-    margin-bottom: 40px;
+    max-width: 1140px;
+    margin: 0 auto 40px;
     border-top: 1px solid var(--vp-c-divider);
     padding-top: 20px;
   }
+}
+
+.code-fold-button {
+  transition: rotate 0.2s;
+  animation: bounce infinite 1.2s;
+  rotate: 0deg;
+}
+
+.code-fold-button.reverse {
+  rotate: 180deg;
+}
+
+.code-fold-mask {
+  @apply absolute z-10 inset-x-0 bottom-0 h-12 flex items-center justify-center cursor-pointer;
+  background-image: linear-gradient(
+    -180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(195, 195, 195) 100%
+  );
+}
+
+.dark .code-fold-mask {
+  background-image: linear-gradient(
+    -180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(195, 195, 195, 0.2) 100%
+  );
 }
 
 /* ::view-transition-old(root),
@@ -149,15 +293,15 @@ watch([isDark], () => {
 }
  */
 /* ::view-transition-old(app) { */
-  /* animation-name: fade-out; */
-  /* Ease-out Back. Overshoots. */
-  /* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* animation-name: fade-out; */
+/* Ease-out Back. Overshoots. */
+/* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 } */
 
 /* ::view-transition-new(app) { */
-  /* animation-name: fade-in; */
-  /* Ease-out Back. Overshoots. */
-  /* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* animation-name: fade-in; */
+/* Ease-out Back. Overshoots. */
+/* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 } */
 
 .progress {

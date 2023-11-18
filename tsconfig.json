@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
       "type": "module",
+      "types": ["vite/client"],
+      "moduleResolution": "nodenext",
       "module": "NodeNext",
       "allowJs": true,
       "strict": true,
