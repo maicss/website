@@ -12,7 +12,6 @@ export default () => {
             if (codeblocks.length) {
                 codeblocks.forEach(codeblock => {
                     if (Number(getComputedStyle(codeblock).height) > 400) {
-                        console.log('>400')
                     }
                 })
             }

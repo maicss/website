@@ -129,7 +129,8 @@ export default defineConfig({
     hostname: "https://maicss.com",
   },
   transformHead (context) {
-    console.log('transformHead', context)
+    // todo
+    // console.log('transformHead', context)
   },
   vite: {
     plugins: [svgLoader({
