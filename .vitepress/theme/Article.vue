@@ -9,7 +9,6 @@ const { frontmatter: data } = useData()
 
 const route = useRoute()
 
-console.log(3333, posts)
 function findCurrentIndex() {
   return posts.findIndex((p) => p.url === route.path)
 }
