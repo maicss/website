@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "feed": "^4.2.2",
-    "giscus": "^1.3.0",
-    "vue": "^3.3.8"
+    "giscus": "^1.3.0"
   }
 }
