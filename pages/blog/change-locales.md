@@ -1,3 +1,8 @@
+---
+date: 2022/10/11
+description: "Configuring Locales"
+image: post-image.jpeg
+---
 
 # Configuring Locales
 
