@@ -3,7 +3,7 @@ date: 2022/10/11
 description: Configuring Locales
 image: post-image.jpeg
 prev:
-  text: Blog 首页
+  text: “Blog 首页”
   link: /blog/
 next:
   text: comment test page
