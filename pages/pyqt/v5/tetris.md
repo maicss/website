@@ -1,4 +1,4 @@
-# 俄罗斯方块 y 游戏
+# 俄罗斯方块游戏
 
 本章我们要制作一个俄罗斯方块游戏。
 
@@ -873,4 +873,3 @@ def rotateLeft(self):
 程序展示：
 
 ![Tetris](images/11-tetris.png)
-

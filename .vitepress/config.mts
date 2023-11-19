@@ -6,11 +6,9 @@ import svgLoader from 'vite-svg-loader'
 export default defineConfig({
   title: "Maicss",
   description: "Miacss' website pyqt 中文 教程 pyqt5 pyqt6",
-  // base: '/',
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["link", { rel: "manifest", href: "/site.webmanifest" }],
-    // [ 'link', { href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' } ],
     [
       "script",
       {
@@ -42,7 +40,6 @@ export default defineConfig({
   lang: "zh-CN",
   cleanUrls: true,
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config、
     outline: {
       label: "TOC",
     },
@@ -127,10 +124,6 @@ export default defineConfig({
   },
   sitemap: {
     hostname: "https://maicss.com",
-  },
-  transformHead (context) {
-    // todo
-    // console.log('transformHead', context)
   },
   vite: {
     plugins: [svgLoader({
