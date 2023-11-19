@@ -3,15 +3,17 @@
     "dev": "vitepress dev",
     "build": "pnpm run lint && vitepress build",
     "preview": "vitepress preview",
-    "lint": "zhlint pages/**/*.md --fix",
+    "lint": "zhlint pages/**/*.md --fix && node ./.vitepress/beforeBuild.mjs",
     "bp": "vitepress build && vitepress preview"
   },
   "type": "module",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "gray-matter": "^4.0.3",
+    "husky": "^8.0.3",
     "tailwindcss": "^3.3.5",
     "vite-svg-loader": "^4.0.0",
-    "vitepress": "1.0.0-rc.27",
+    "vitepress": "1.0.0-rc.28",
     "zhlint": "^0.7.1"
   },
   "pnpm": {
@@ -25,5 +27,12 @@
   "dependencies": {
     "feed": "^4.2.2",
     "giscus": "^1.3.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120,
+    "quoteProps": "as-needed"
   }
 }

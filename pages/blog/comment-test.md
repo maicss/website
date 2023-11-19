@@ -1,7 +1,13 @@
 ---
-date: 2023-11-07
-author: Maicss
+date: 2023/11/7
+description: comment test page
 image: post-image.jpeg
+prev:
+  text: Configuring Locales
+  link: /blog/change-locales
+next:
+  text: Frontmatter Config
+  link: /blog/test
 ---
 
 # comment test page
