@@ -11,7 +11,9 @@ next:
 ---
 
 # Configuring Locales
+
 Some commands used in my daily life
+
 ## The Easy Way
 
  - Install debconf (i.e. run apt-get update then apt-get install debconf，as root)
