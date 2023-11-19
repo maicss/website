@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vitepress dev",
-    "build": "pnpm run lint && vitepress build",
+    "build": "vitepress build",
     "preview": "vitepress preview",
     "lint": "zhlint pages/**/*.md --fix && node ./.vitepress/beforeBuild.mjs",
     "bp": "vitepress build && vitepress preview"
