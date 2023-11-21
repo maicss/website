@@ -6,8 +6,8 @@ prev:
   text: comment test page
   link: /blog/comment-test
 next:
-  text: Blog 首页
-  link: /blog/
+  text: javascript promise pool
+  link: /blog/promise-pool
 ---
 # Frontmatter Config
 
