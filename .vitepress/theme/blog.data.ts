@@ -14,7 +14,7 @@ declare const data: Post[]
 export { data }
 
 export default createContentLoader('/pages/blog/*.md', {
-  excerpt: '<!--more-->',
+  excerpt: '<!-- more -->',
   render: false,
   transform(raw): Post[] {
     return raw
