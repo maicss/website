@@ -12,7 +12,7 @@ const { page, frontmatter, isDark } = useData()
 const route = useRoute()
 const router = useRouter()
 
-const NoCommentPages = ['/', '/pyqt/', '/blog/']
+const NoCommentRoutes = ['/', '/pyqt/', '/blog/', '/shanbay-extension-privacy-policy']
 const mountComment = ref(false)
 
 const foldCode = () => {
@@ -82,8 +82,9 @@ const imageViewer = () => {
           mask.classList.remove('invisible')
           mask.classList.add('visible')
           const maskImage = document.createElement('img')
-          const minImagePx = Math.min(img.naturalHeight, img.naturalWidth)
-          const minWindowPx = Math.min(window.innerHeight, window.innerWidth)
+          const widthRatio = img.naturalWidth / window.innerWidth
+          const heightRatio = img.naturalHeight / window.innerHeight
+          const maxRatio = Math.max(widthRatio, heightRatio)
           if (minImagePx > minWindowPx) {
             maskImage.classList.add('w-4/5')
           } else {
@@ -117,7 +118,7 @@ onMounted(() => {
 
 const handleCommentComponent = () => {
   const showComment =
-    !NoCommentPages.includes(route.path) && frontmatter.value?.comment !== false && page.value.isNotFound !== true
+    !NoCommentRoutes.includes(route.path) && frontmatter.value?.comment !== false && page.value.isNotFound !== true
   mountComment.value = showComment
 }
 
