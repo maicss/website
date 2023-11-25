@@ -12,7 +12,7 @@ const { page, frontmatter, isDark } = useData()
 const route = useRoute()
 const router = useRouter()
 
-const NoCommentPages = ['/', '/pyqt/', '/blog/']
+const NoCommentRoutes = ['/', '/pyqt/', '/blog/', '/shanbay-extension-privacy-policy']
 const mountComment = ref(false)
 
 const foldCode = () => {
@@ -82,8 +82,9 @@ const imageViewer = () => {
           mask.classList.remove('invisible')
           mask.classList.add('visible')
           const maskImage = document.createElement('img')
-          const minImagePx = Math.min(img.naturalHeight, img.naturalWidth)
-          const minWindowPx = Math.min(window.innerHeight, window.innerWidth)
+          const widthRatio = img.naturalWidth / window.innerWidth
+          const heightRatio = img.naturalHeight / window.innerHeight
+          const maxRatio = Math.max(widthRatio, heightRatio)
           if (minImagePx > minWindowPx) {
             maskImage.classList.add('w-4/5')
           } else {
@@ -117,7 +118,7 @@ onMounted(() => {
 
 const handleCommentComponent = () => {
   const showComment =
-    !NoCommentPages.includes(route.path) && frontmatter.value?.comment !== false && page.value.isNotFound !== true
+    !NoCommentRoutes.includes(route.path) && frontmatter.value?.comment !== false && page.value.isNotFound !== true
   mountComment.value = showComment
 }
 
@@ -162,15 +163,9 @@ const handleCommentComponent = () => {
 
 router.onAfterRouteChanged = () => {
   foldCode()
-  console.log(2222)
   handleCommentComponent()
   changeCommentPluginTheme()
 }
-
-watch([() => route.path], () => {
-  console.log(1111)
-})
-
 
 const unwatchTheme = watch([isDark], () => {
   changeCommentPluginTheme()
@@ -206,7 +201,7 @@ onUnmounted(() => {
       </div>
     </template>
   </Layout>
-  <div class="progress"></div>
+  <!--<div class="progress"></div>-->
   <Teleport to="body">
     <div class="mask invisible fixed inset-0 bg-black/80 z-50 flex items-center justify-center transition-all"></div>
   </Teleport>
@@ -301,7 +296,7 @@ onUnmounted(() => {
 /* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 } */
 
-.progress {
+/**.progress {
   height: 2px;
   background: #6ea11e;
   position: fixed;
@@ -323,6 +318,7 @@ onUnmounted(() => {
     transform: scaleX(1);
   }
 }
+ */
 
 /* @keyframes colorChange {
   0% {

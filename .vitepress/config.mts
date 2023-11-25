@@ -54,7 +54,6 @@ export default defineConfig({
     },
     siteTitle: "Miacss' website",
     nav: [
-      { text: "首页", link: "/" },
       { text: "PyQT 教程", link: "/pyqt/" },
       { text: "Blog", link: "/blog/" },
     ],
