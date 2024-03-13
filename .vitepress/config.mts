@@ -1,14 +1,16 @@
 /// <reference types="vite-svg-loader" />
-import { defineConfig } from "vitepress"
+import { defineConfig, type HeadConfig } from "vitepress"
 import svgLoader from 'vite-svg-loader'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
-  title: "Maicss",
-  description: "Miacss' website pyqt 中文 教程 pyqt5 pyqt6",
-  head: [
-    ["link", { rel: "icon", href: "/favicon.ico" }],
-    ["link", { rel: "manifest", href: "/site.webmanifest" }],
+
+const head:HeadConfig[] = [
+  ["link", { rel: "icon", href: "/favicon.ico" }],
+  ["link", { rel: "manifest", href: "/site.webmanifest" }],
+]
+
+if (process.env.NODE_ENV === 'production') {
+  head.push(
     [
       "script",
       {
@@ -16,6 +18,8 @@ export default defineConfig({
         src: "https://www.googletagmanager.com/gtag/js?id=G-7KBNJR8LJ3",
       },
     ],
+  )
+  head.push(
     [
       "script",
       {},
@@ -24,6 +28,9 @@ export default defineConfig({
       gtag('js', new Date());
       gtag('config', 'G-7KBNJR8LJ3');`,
     ],
+  )
+
+  head.push(
     [
       "script",
       {},
@@ -35,7 +42,13 @@ export default defineConfig({
       s.parentNode.insertBefore(hm, s);
     })();`,
     ],
-  ],
+  )
+}
+
+export default defineConfig({
+  title: "Maicss",
+  description: "Miacss' website pyqt 中文 教程 pyqt5 pyqt6",
+  head,
   srcDir: "./pages",
   lang: "zh-CN",
   cleanUrls: true,
@@ -125,10 +138,22 @@ export default defineConfig({
   sitemap: {
     hostname: "https://maicss.com",
   },
+  markdown: {
+    image: {
+      lazyLoading: true
+    }
+  },
   vite: {
     plugins: [svgLoader({
       defaultImport: 'component'
-    })]
+    })],
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: `assets/[name].[ext]`
+        }
+      }
+    }
   },
   // buildEnd: genFeed
 });

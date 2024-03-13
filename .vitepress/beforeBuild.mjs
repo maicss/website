@@ -84,7 +84,7 @@ readdir(folder)
       items.map((item) => writeFile(resolve(folder, item.file), buildFrontMatter(item) + '\r\n' + item.content))
     ).then(() => {
       if (breakBuildInfo.length) {
-        console.error(`WARNING: [${breakBuildInfo}] build failed, exiting.`)
+        console.error(`ERROR: [${breakBuildInfo}] build failed, exiting.`)
         exit(1)
       }
     })

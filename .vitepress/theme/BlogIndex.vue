@@ -34,7 +34,7 @@ const changePage = (page:number|'prev'|'next') => {
       <ul>
         <li v-for="item in currentPagePosts" :key="item.url" class="mb-4 hover:scale-105 cursor-pointer overflow-hidden duration-150">
           <a :href="item.url" class="flex gap-x-4 h-44 rounded-lg border overflow-hidden blog-index-list-item line-clamp-6 no-underline">
-            <img :src="'./images/' + item.image" alt="" class="flex-[1_4] object-center object-cover">
+            <img :src="item.image.startsWith('http') ? item.image : ('/assets/' + item.image)" alt="" class="flex-[1_4] object-center object-cover">
             <div v-html="item.excerpt" class="prose dark:prose-invert flex-[3_4] py-2 pr-2 h-full overflow-hidden"></div>
           </a>
         </li>

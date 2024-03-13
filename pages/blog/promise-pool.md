@@ -10,7 +10,7 @@ next:
   link: /blog/
 ---
 
-# javascript promise pool
+# Javascript promise pool
 
 在日常搬砖中或者面试题都遇到过异步控制的需求，简单的比如直接处理成二维数组和 `Promise.all` 就完事了。
 但是更好的方法是创建一个异步池效率会更佳，下面这个图片更加形象的说明了异步池和 `Promise.all` 分批的区别：

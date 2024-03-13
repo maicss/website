@@ -162,15 +162,9 @@ const handleCommentComponent = () => {
 
 router.onAfterRouteChanged = () => {
   foldCode()
-  console.log(2222)
   handleCommentComponent()
   changeCommentPluginTheme()
 }
-
-watch([() => route.path], () => {
-  console.log(1111)
-})
-
 
 const unwatchTheme = watch([isDark], () => {
   changeCommentPluginTheme()
