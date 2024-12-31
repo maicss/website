@@ -1,10 +1,6 @@
-/// <reference types="vite-svg-loader" />
-import { defineConfig, type HeadConfig } from "vitepress"
-import svgLoader from 'vite-svg-loader'
+import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
-
-const head:HeadConfig[] = [
+const head = [
   ["link", { rel: "icon", href: "/favicon.ico" }],
   ["link", { rel: "manifest", href: "/site.webmanifest" }],
 ]
@@ -45,11 +41,11 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Maicss",
   description: "Miacss' website pyqt 中文 教程 pyqt5 pyqt6",
   head,
-  srcDir: "./pages",
   lang: "zh-CN",
   cleanUrls: true,
   themeConfig: {
@@ -123,9 +119,9 @@ export default defineConfig({
       // message: 'Released under the MIT License.',
       copyright: "Copyright © 2019-present Maicss",
     },
-    // search: {
-    //   provider: 'local'
-    // },
+    search: {
+      provider: 'local'
+    },
 
     // carbonAds: {
     //   code: 'your-carbon-code',
@@ -144,9 +140,6 @@ export default defineConfig({
     }
   },
   vite: {
-    plugins: [svgLoader({
-      defaultImport: 'component'
-    })],
     build: {
       rollupOptions: {
         output: {
@@ -156,4 +149,4 @@ export default defineConfig({
     }
   },
   // buildEnd: genFeed
-});
+})

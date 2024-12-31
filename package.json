@@ -3,33 +3,19 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "lint": "zhlint pages/**/*.md --fix && node ./.vitepress/beforeBuild.mjs",
-    "build:blogIndex": "node ./.vitepress/beforeBuild.mjs",
-    "bp": "vitepress build && vitepress preview"
+    "lint": "zhlint pages/**/*.md --fix && node ./.vitepress/beforeBuild.mjs"
   },
   "type": "module",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.11.26",
-    "gray-matter": "^4.0.3",
-    "husky": "^8.0.3",
-    "prettier": "3.2.5",
-    "tailwindcss": "^3.4.1",
-    "vite-svg-loader": "^4.0.0",
-    "vitepress": "1.0.0-rc.45",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.17",
+    "vitepress": "^1.5.0",
+    "vue": "^3.5.13",
     "zhlint": "^0.8.1"
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "search-insights"
-      ]
-    }
-  },
   "dependencies": {
-    "feed": "^4.2.2",
-    "giscus": "^1.5.0"
+    "@giscus/vue": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.15"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -37,5 +23,6 @@
     "singleQuote": true,
     "printWidth": 120,
     "quoteProps": "as-needed"
-  }
+  },
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }

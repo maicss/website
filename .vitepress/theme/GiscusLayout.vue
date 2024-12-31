@@ -1,9 +1,10 @@
 <!-- .vitepress/theme/Layout.vue -->
 
-<script setup lang="ts">
+<script setup>
 import { useData, useRoute, useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme-without-fonts'
 import { nextTick, onMounted, ref, watch, onUnmounted } from 'vue'
+import Giscus from '@giscus/vue'
 const { Layout } = DefaultTheme
 const { page, frontmatter, isDark } = useData()
 // import useFoldCode from './composables/useFoldCode'
@@ -17,7 +18,7 @@ const mountComment = ref(false)
 
 const foldCode = () => {
   if (frontmatter.value.codeFolder !== false) {
-    const codeblocks = document.querySelectorAll(`.vp-doc div[class*='language-']`) as unknown as HTMLDivElement[]
+    const codeblocks = document.querySelectorAll(`.vp-doc div[class*='language-']`)
 
     if (codeblocks.length) {
       codeblocks.forEach((codeblock) => {
@@ -40,7 +41,7 @@ const foldCode = () => {
               <path fill="currentColor" d="M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8 316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496z"/>
             </svg>`
           codeFoldMask.addEventListener('click', () => {
-            const svg = codeFoldMask.querySelector('svg')!
+            const svg = codeFoldMask.querySelector('svg')
             if (svg.classList.contains('reverse')) {
               svg.classList.remove('reverse')
               codeblock.classList.add('h-100')
@@ -64,16 +65,9 @@ const foldCode = () => {
   }
 }
 
-const changeCommentPluginTheme = () => {
-  const element = document.querySelector('#giscus')
-  if (mountComment.value && element) {
-    element.setAttribute('theme', isDark.value ? 'transparent_dark' : 'light')
-  }
-}
-
 const imageViewer = () => {
-  const images = document.querySelectorAll('.vp-doc img') as unknown as HTMLImageElement[]
-  const mask: HTMLDivElement = document.querySelector('.mask')!
+  const images = document.querySelectorAll('.vp-doc img')
+  const mask = document.querySelector('.mask')
   images.forEach((img) => {
     img.onload = () => {
       if (img.naturalHeight > img.height || img.naturalWidth > img.width) {
@@ -107,9 +101,7 @@ const maskClickHide = () => {
 }
 
 onMounted(() => {
-  import('giscus')
   handleCommentComponent()
-  nextTick(changeCommentPluginTheme)
   foldCode()
   imageViewer()
   maskClickHide()
@@ -163,24 +155,15 @@ const handleCommentComponent = () => {
 router.onAfterRouteChanged = () => {
   foldCode()
   handleCommentComponent()
-  changeCommentPluginTheme()
 }
 
-const unwatchTheme = watch([isDark], () => {
-  changeCommentPluginTheme()
-})
-
-onUnmounted(() => {
-  unwatchTheme()
-})
 </script>
 
 <template>
   <Layout>
     <template #doc-bottom>
       <div class="giscus-container" v-if="mountComment">
-        <giscus-widget
-          v-pre
+        <Giscus
           id="giscus"
           repo="maicss/website"
           repoid="R_kgDOKnduBQ"
@@ -189,18 +172,19 @@ onUnmounted(() => {
           mapping="pathname"
           term="Welcome to Maicss' site"
           strict="0"
-          :reactionsenabled="true"
+          reactionsenabled="1"
           emitmetadata="0"
           inputposition="top"
-          theme="light"
+          loading="lazy"
+          :theme="isDark ? 'transparent_dark' : 'light'"
           lang="zh-CN"
         >
           <p>Loading comments...</p>
-        </giscus-widget>
+        </Giscus>
       </div>
     </template>
   </Layout>
-  <div class="progress"></div>
+  <!-- <div class="progress"></div> -->
   <Teleport to="body">
     <div class="mask invisible fixed inset-0 bg-black/80 z-50 flex items-center justify-center transition-all"></div>
   </Teleport>
@@ -209,13 +193,17 @@ onUnmounted(() => {
 <style>
 .giscus-container {
   position: relative;
+  padding-top: 32px;
   z-index: 5;
+
+  @media (min-width: 960px) {
+    border-top: 1px solid var(--vp-c-divider);
+    margin-top: 0;
+  }
 
   @media (min-width: 1200px) {
     max-width: 1140px;
     margin: 0 auto 40px;
-    border-top: 1px solid var(--vp-c-divider);
-    padding-top: 20px;
   }
 }
 
@@ -295,7 +283,7 @@ onUnmounted(() => {
 /* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 } */
 
-.progress {
+/* .progress {
   height: 2px;
   background: #6ea11e;
   position: fixed;
@@ -316,7 +304,7 @@ onUnmounted(() => {
   100% {
     transform: scaleX(1);
   }
-}
+} */
 
 /* @keyframes colorChange {
   0% {
