@@ -67,6 +67,7 @@ export default defineConfig({
       { text: "leetcode", link: "/leetcode/" },
       { text: "PyQT 教程", link: "/pyqt/" },
       { text: "Blog", link: "/blog/" },
+      { text: "Geek Admin", link: "/geek-admin/" },
     ],
     logo: { src: "/logo.png", alt: "maicss' website logo" },
     i18nRouting: false,
@@ -114,6 +115,23 @@ export default defineConfig({
           ],
         },
       ],
+      "/geek-admin/": [
+        {
+          text: "Geek Admin", link: '/geek-admin/',
+          items: [
+            { text: "介绍", link: "/geek-admin/introduce" },
+            { text: "目录结构", link: "/geek-admin/catalogue" },
+            { text: "路由、菜单", link: "/geek-admin/router" },
+            { text: "权限管理", link: "/geek-admin/auth" },
+            { text: "网络请求", link: "/geek-admin/request" },
+            { text: "构建、部署", link: "/geek-admin/build" },
+            { text: "项目规范", link: "/geek-admin/standard" },
+            { text: "主题配置", link: "/geek-admin/theme" },
+            { text: "布局模式", link: "/geek-admin/layout" },
+            { text: "常见问题", link: "/geek-admin/faq" },
+          ],
+        }
+      ]
     },
     socialLinks: [{ icon: "github", link: "https://github.com/maicss" }],
     footer: {

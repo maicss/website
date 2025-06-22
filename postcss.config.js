@@ -1,9 +1,8 @@
-import tailwind from 'tailwindcss'
 import tailwindTypography from '@tailwindcss/typography'
 
 export default {
-  plugins: [
-    tailwind({
+  plugins: {
+    "@tailwindcss/postcss": {
       content: ['./.vitepress/theme/**/*.vue'],
       plugins: [tailwindTypography],
       theme: {
@@ -13,6 +12,7 @@ export default {
           }
         },
       },
-    })
-  ]
+    }
+  }
 }
+

@@ -191,6 +191,7 @@ router.onAfterRouteChanged = () => {
 </template>
 
 <style>
+@reference 'tailwindcss'
 .giscus-container {
   position: relative;
   padding-top: 32px;

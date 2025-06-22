@@ -3,7 +3,6 @@ export default createContentLoader('./blog/*.md', {
   excerpt: true,
   
   transform(raw) {
-    console.log('raw', raw)
     return raw
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title,
