@@ -113,7 +113,17 @@
 @media (min-width: 640px) {
   :root {
     --vp-home-hero-image-filter: blur(56px);
+    
   }
+}
+
+@media (min-width: 960px) {
+  .VPHero {
+    margin: 100px 0 !important;
+  }
+}
+.VPImage {
+  border-radius: 12px;
 }
 
 @media (min-width: 960px) {
