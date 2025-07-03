@@ -13,7 +13,6 @@
 > 🌈 推荐安装以下插件：
 
 - [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) ==> Vue3 官方插件
-- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) ==> Vue3 官方插件（TypeScript）
 - [Vue 3 Snippets](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets) ==> Vue3 代码提示
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) ==> 代码检查
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) ==> CSS 代码检查 && 格式化
@@ -27,7 +26,7 @@
 
 ```json
 {
-	"recommendations": ["vue.volar", "vue.vscode-typescript-vue-plugin", "hollowtree.vue-snippets", "dbaeumer.vscode-eslint", "stylelint.vscode-stylelint", "esbenp.prettier-vscode", "editorconfig.editorconfig", "streetsidesoftware.code-spell-checker", "syler.sass-indented", "mikestead.dotenv"]
+	"recommendations": ["vue.volar", "hollowtree.vue-snippets", "dbaeumer.vscode-eslint", "stylelint.vscode-stylelint", "esbenp.prettier-vscode", "editorconfig.editorconfig", "streetsidesoftware.code-spell-checker", "syler.sass-indented", "mikestead.dotenv"]
 }
 ```
 
@@ -106,12 +105,10 @@ pnpm commit
 		"dev": "vite",
 		// 本地运行(dev环境)
 		"serve": "vite",
-		// 构建打包(dev环境)
-		"build:dev": "vue-tsc && vite build --mode development",
+		// 构建打包
+		"build": "vue-tsc && vite build --mode development",
 		// 构建打包(test环境)
 		"build:test": "vue-tsc && vite build --mode test",
-		// 构建打包(pro环境)
-		"build:pro": "vue-tsc && vite build --mode production",
 		// 检查项目 ts 类型
 		"type:check": "vue-tsc --noEmit --skipLibCheck",
 		// 本地环境预览构建后的 dist

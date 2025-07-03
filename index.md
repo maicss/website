@@ -31,8 +31,8 @@ features:
     details: Chrome 扇贝查词插件，提供双击/选中查词，发音，例句，加入生词本，学习提醒等功能。
     
   - icon: 
-      src: geek.webp
-    title: Geek Admin
-    link: https://geek-admin.maicss.com/
+      src: geeker.webp
+    title: Geeker Admin
+    link: https://geeker-admin.maicss.com/
     details: 使用 Element-plus、Vite6、Typescript、Pinia 的后台管理模板。
 ---
