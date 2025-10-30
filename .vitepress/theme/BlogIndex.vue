@@ -82,12 +82,19 @@ const changePage = (page) => {
   </div>
 </template>
 
-<style>
-.blog-index-list-item.no-underline {
-  text-decoration: none;
-}
+<style scoped>
+.blog-index {
+  .blog-index-list-item.no-underline {
+    text-decoration: none;
+  }
 
-.vp-doc .header-anchor:before {
-  content: '';
+  .vp-doc .header-anchor:before {
+    content: '';
+  }
+
+  :deep(img) {
+    margin: 24px auto;
+    width: 50%;
+  }
 }
 </style>

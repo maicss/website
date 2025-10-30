@@ -10,7 +10,8 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.12",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.20"
+    "vue": "^3.5.20",
+    "postcss": "^8.5.6"
   },
   "dependencies": {
     "@giscus/vue": "^3.1.1",
