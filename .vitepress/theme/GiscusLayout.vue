@@ -159,7 +159,7 @@ router.onAfterRouteChange = () => {
 <template>
   <Layout>
     <template #doc-bottom>
-      <div class="giscus-container" v-if="mountComment">
+      <div class="giscus-container container" v-if="mountComment">
         <Giscus
           id="giscus"
           repo="maicss/website"
@@ -169,7 +169,7 @@ router.onAfterRouteChange = () => {
           mapping="pathname"
           term="Welcome to Maicss' site"
           strict="0"
-          reactionsenabled="1"
+          reactionsenabled="0"
           emitmetadata="0"
           inputposition="top"
           loading="lazy"
@@ -188,42 +188,6 @@ router.onAfterRouteChange = () => {
 </template>
 
 <style>
-@reference 'tailwindcss'
-.giscus-container {
-  position: relative;
-  padding-top: 32px;
-  z-index: 5;
-
-  @media (min-width: 960px) {
-    border-top: 1px solid var(--vp-c-divider);
-    margin-top: 0;
-  }
-
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-    margin: 0 auto 40px;
-  }
-}
-
-.code-fold-button {
-  transition: rotate 0.2s;
-  animation: bounce infinite 1.2s;
-  rotate: 0deg;
-}
-
-.code-fold-button.reverse {
-  rotate: 180deg;
-}
-
-.code-fold-mask {
-  @apply absolute z-10 inset-x-0 bottom-0 h-12 flex items-center justify-center cursor-pointer;
-  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgb(195, 195, 195) 100%);
-}
-
-.dark .code-fold-mask {
-  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(195, 195, 195, 0.2) 100%);
-}
-
 /* ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
