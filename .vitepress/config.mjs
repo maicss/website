@@ -42,6 +42,7 @@ export default defineConfig({
   head,
   lang: 'zh-CN',
   cleanUrls: true,
+  ignoreDeadLinks: true,
   themeConfig: {
     outline: {
       label: 'TOC',
